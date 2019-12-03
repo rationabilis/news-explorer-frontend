@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Страница про различные веб-технологии">
+  <meta name="keywords" content="HTML5, CSS">
+  <meta name="author" content="Василий Петров">
+  <title>NewsExplorer </title>
+  <link rel="icon" href="./images/favicon.png">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
+</head>
+<body>
+  <div class="main">
+
+    <section class="search">
+      <header class="header">
+        <p class="header__logo">NewsExplorer</p>
+        <nav class="header__menu"> <!--  После логина добавить класс header__menu_logged-in -->
+          <a class="link link_header" href="#">Главная</a>
+          <a class="link link_header" href="about.html">О проекте</a>
+          <a class="link link_header" href="#">Авторизоваться</a>
+          <a class="link link_header" href="saved_news.html">Сохранённые статьи</a>
+          <a class="link link_header" href="#">[-></a>
+        </nav>
+      </header>
+
+      <h1 class="search__h1">Что в мире творится?</h1>
+      <p class="search__p">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
+
+      <form class="search__form" name="search">
+          <input id="keyword" type="text" name="keyword" class="search__input" placeholder="Введите тему новости">
+          <button class="button search__button">Искать</button>
+      </form>
+
+      </section>
+
+    <section class="searching">
+        <i class="circle-preloader"></i>
+        <p class="searching__p">Идет поиск новостей...</p>
+      </section>
+
+    <section class="no-results">
+        <img class="no-results__pic" src="./images/not-found.png" alt=":(">
+        <h3>Ничего не найдено</h3>
+        <p class="no-results__p">К сожалению по вашему запросу ничего не найдено.</p>
+      </section>
+
+    <section class="search-results">
+        <h2 class="search-results__title">Результаты поиска</h2>
+        <div class="cards">
+
+          <div class="card">
+            <div class="card__image">
+              <button class="marked-icon"></button>
+            </div>
+
+            <h4 class="card__date">2 августа, 2019</h4>
+            <h3 class="card__title">Национальное достояние – парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад
+                здесь начала складываться система национальных парков – охраняемых
+                территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <h5 class="card__source">ЛЕНТА.РУ</h5>
+
+          </div>
+
+          <div class="card">
+              <div class="card__image card__image2">
+                <button class="marked-icon marked-icon_marked"></button>
+              </div>
+
+              <h4 class="card__date">2 августа, 2019</h4>
+              <h3 class="card__title">Лесные огоньки: история одной фотографии</h3>
+              <p class="card__text">Фотограф отвлеклась от освещения суровой политической
+                  реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных
+                  чудес природы.</p>
+              <h5 class="card__source">МЕДУЗА</h5>
+
+            </div>
+
+            <div class="card">
+                <div class="card__image card__image3">
+                  <button class="marked-icon"></button>
+                </div>
+
+                  <h4 class="card__date">2 августа, 2019</h4>
+                  <h3 class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+                  <p class="card__text">Знаменитый фотограф снимает первозданные леса России,
+                    чтобы рассказать о необходимости их сохранения. В этот раз он отправился
+                    в Двинско-Пинежскую тайгу, где... </p>
+                  <h5 class="card__source">РИА</h5>
+                </div>
+
+
+        </div>
+        <button class="search-results__more-button">Показать еще</button>
+      </section>
+
+    <section class="about-author">
+      <img class="about-author__avatar" src="./images/author_avatar.png" alt="Портрет автора">
+      <div>
+        <h2 class="about-author__h">Об авторе</h2>
+        <p class="about-author__p">Это блок с описанием автора проекта. Здесь следует указать,
+          как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
+        <p class="about-author__p">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились,
+          и чем можете помочь потенциальным заказчикам.</p>
+      </div>
+    </section>
+
+    <footer class="header">
+      <p class="copiright">&copy; 2019 Supersite</p>
+      <nav class="header__menu">
+        <a class="link link_footer" href="#">Главная</a>
+        <a class="link link_footer" href="about.html">О проекте</a>
+        <a class="link link_footer" href="//praktikum.yandex.ru">Яндекс.Практикум</a>
+      </nav>
+      <div class="logos">
+        <a class="logos__ref" href="//www.github.com"><img class="logos__pic" src="./images/github_logo.png" alt="Лого Гитхаба"></a>
+        <a class="logos__ref" href="//www.facebook.com"><img class="logos__pic" src="./images/facebook_logo.png" alt="Лого Фейсбука"></a>
+      </div>
+    </footer>
+
+  </div>
+  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+</body>
+</html>

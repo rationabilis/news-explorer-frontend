@@ -1,0 +1,16 @@
+@import url('./__image/__image.css');
+@import url('./__date/__date.css');
+@import url('./__text/__text.css');
+@import url('./__source/__sourse.css');
+@import url('./__title/__title.css');
+
+.card {
+  position: relative;
+  width: 22.22rem;
+  height: 32rem;
+  margin-right: 0.89rem;
+  cursor: pointer;
+  background-color: white;
+  border-radius: 0.89rem;
+}
+

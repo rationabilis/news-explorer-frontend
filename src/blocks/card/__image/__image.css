@@ -1,0 +1,20 @@
+.card__image {
+  height: 15.11rem;
+  width: 100%;
+  background-image: url('../../../images/park.png');
+  background-size: cover;
+  background-position: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: relative;
+}
+
+
+
+.card__image2{
+  background-image: url('../../../images/ogonki.png');
+}
+
+.card__image3 {
+  background-image: url('../../../images/taiga.png');
+}

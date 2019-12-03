@@ -1,0 +1,17 @@
+/* Результаты поиска */
+@import url('./__title/__title.css');
+@import url('./__more-button/__more_button.css');
+
+.search-results {
+  font-family: Roboto Slab;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 40px;
+  line-height: 46px;
+  background: #F5F6F7;
+  display: flex; /* поменять на none до логина */
+  flex-direction: column;
+  align-items: baseline;
+
+  color: #1A1B22;
+}

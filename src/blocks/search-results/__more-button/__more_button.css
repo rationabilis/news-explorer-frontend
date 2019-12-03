@@ -1,0 +1,17 @@
+.search-results__more-button {
+  background: #FFFFFF;
+  border-radius: 4.44rem;
+  width: 16rem;
+  height: 3.56rem;
+  border: none;
+  margin: 3.56rem auto 4.44rem auto;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.33rem;
+}
+
+.search-results__more-button:hover {
+  opacity: 0.9;
+}

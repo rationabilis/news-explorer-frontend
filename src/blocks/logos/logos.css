@@ -1,0 +1,9 @@
+@import url('./__pic/__pic.css');
+@import url('./__ref/__ref.css');
+
+.logos {
+  margin-right: 5.89rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}

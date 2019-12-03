@@ -1,0 +1,13 @@
+.search__form {
+  width: 33.78rem;
+  height: 3.56rem;
+  background: #FFF;
+
+  box-sizing: border-box;
+  border-radius: 5.56rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3.61rem auto 4.44rem 23.11rem;
+}

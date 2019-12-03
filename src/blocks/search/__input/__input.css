@@ -1,0 +1,17 @@
+.search__input {
+  width: 62%;
+  height: 100%;
+  background-color: transparent;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 0.89rem;
+  line-height: 1.22rem;
+  color: #1A1B22;
+  margin: 1.17rem auto 1.17rem 1.33rem;
+  border: none;
+}
+
+.search__input::placeholder {
+  color: #B6BCBF;
+}

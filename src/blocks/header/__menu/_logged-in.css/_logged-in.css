@@ -1,0 +1,9 @@
+
+.header__menu_logged-in .link.link:nth-child(3)  {
+  display: none;
+}
+
+.header__menu_logged-in .link.link:nth-child(n+4)  {
+  display: flex;
+}
+

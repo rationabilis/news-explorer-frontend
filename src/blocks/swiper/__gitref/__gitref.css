@@ -1,0 +1,9 @@
+.swiper__gitref {
+  color: #1A1B22;
+  text-decoration: none;
+  margin: 4.72rem 6.2rem 4.06rem 0;
+}
+
+.swiper__gitref:visited {
+  color: #B6BCBF;
+}

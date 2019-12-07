@@ -1,3 +1,5 @@
+@import url('./_black/_black.css');
+
 .header__logo {
   font-family: Roboto Slab;
   font-style: normal;
@@ -7,5 +9,5 @@
   align-items: center;
 
   margin-left: 5.78rem;
-  color: #FFFFFF;
+
 }

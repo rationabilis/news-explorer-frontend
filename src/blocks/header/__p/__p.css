@@ -1,0 +1,8 @@
+.header__p {
+  width: 45.28rem;
+  margin: 1.33rem auto 1.5rem 5.78rem;
+}
+
+.header__p:last-of-type {
+  margin: 1.33rem auto 4rem 5.78rem;
+}

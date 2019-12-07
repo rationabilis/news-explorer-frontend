@@ -1,3 +1,13 @@
 .link.link_footer {
   color: #1A1B22;
+  margin: 0;
+  padding: 1.67rem 23px 1.46rem 23px;
+}
+
+.link.link_footer:nth-child(3) {
+  margin-right: -65px;
+}
+
+.link.link_footer:hover {
+  padding: 1.67rem 23px 1.46rem 23px;
 }

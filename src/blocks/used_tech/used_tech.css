@@ -1,0 +1,12 @@
+@import url('./__p/__p.css');
+@import url('./__h/__h.css');
+@import url('./__tech/__tech.css');
+
+.used-tech {
+  background: #F5F6F7;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  flex-wrap: wrap;
+  width: 100%;
+}

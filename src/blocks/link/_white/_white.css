@@ -1,0 +1,20 @@
+.link.link_white {
+  color: #1A1B22;
+  margin: 0 33px 0 2px;
+  padding: 1.67rem 0 1.46rem 0;
+}
+
+.link.link_white:hover {
+  padding: 1.67rem 0 1.28rem 0;
+}
+
+.link.link_white:nth-child(5){
+  border: 1px solid #000;
+  box-sizing: border-box;
+  border-radius: 100px;
+  height: 2.67rem;
+  padding: 0.67rem 1rem 0.67rem 1rem;
+  font-size: 1rem;
+  line-height: 1.33rem;
+  margin-right: 0;
+  }

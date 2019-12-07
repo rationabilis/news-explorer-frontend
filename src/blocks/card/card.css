@@ -8,9 +8,9 @@
   position: relative;
   width: 22.22rem;
   height: 32rem;
-  margin-right: 0.89rem;
+  margin: 0 .89rem .89rem 0;
   cursor: pointer;
   background-color: white;
-  border-radius: 0.89rem;
+  border-radius: .89rem;
 }
 

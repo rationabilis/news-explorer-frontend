@@ -1,0 +1,9 @@
+.swiper__text {
+  grid-column: 1/span 2;
+  grid-row: 3/3;
+  width: 100%;
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  color: #1A1B22;
+}

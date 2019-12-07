@@ -1,0 +1,10 @@
+@import url('./__grey-p/__grey-p.css');
+@import url('./__p/__p.css');
+@import url('./__image/__image.css');
+@import url('./__category/__category.css');
+
+.saved-articles {
+    width: 100%;
+    background-color: white;
+    color: #1A1B22;
+  }

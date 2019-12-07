@@ -1,0 +1,15 @@
+.popup__success {
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 17px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  text-align: center;
+  margin: 14px 0 15px 0;
+  text-decoration: none;
+
+  color: #2F71E5;
+}

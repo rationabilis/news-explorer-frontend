@@ -1,3 +1,4 @@
 .search-results__title {
   margin: 4.44rem auto auto 5.78rem;
+  max-width: 530px;
 }

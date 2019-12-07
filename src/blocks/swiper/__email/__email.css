@@ -1,0 +1,8 @@
+.swiper__email {
+  grid-column: 2/2;
+  grid-row: 2/2;
+  margin: 2rem 0 0 0;
+  font-size: 14px;
+  line-height: 22px;
+  color: #1A1B22;
+}

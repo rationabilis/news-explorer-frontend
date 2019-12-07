@@ -1,0 +1,8 @@
+.swiper__date {
+  grid-column: 1/span 2;
+  grid-row: 1/1;
+  margin: 0;
+  font-size: 14px;
+  line-height: 22px;
+  color: #B6BCBF;
+}

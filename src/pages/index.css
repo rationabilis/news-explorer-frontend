@@ -13,6 +13,10 @@
 @import url('../blocks/circle-preloader/circle-preloader.css');
 @import url('../blocks/copiright/copiright.css');
 @import url('../blocks/logos/logos.css');
+@import url('../blocks/popup/popup.css');
+@import url('../blocks/error-message/error-message.css');
+@import url('../blocks/button/button.css');
+@import url('../blocks/invisible/invisible.css');
 
 @import url('https://rsms.me/inter/inter.css');
 html { font-family: 'Inter', sans-serif; }
@@ -35,7 +39,8 @@ html { font-family: 'Inter', sans-serif; }
   font-family: 'Roboto Slab';
 }
 
-/* div, h1, h2,h3, h4, h5, h6, p, a, section, img, footer, header, nav, form, input, button {
+/* div, h1, h2,h3, h4, h5, h6, p, a, section, img, footer, header,
+nav, form, input, button {
     border-style: solid;
     border-color: red;
     border-width: 1px;
@@ -51,6 +56,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items : center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 h2 {

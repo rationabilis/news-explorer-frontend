@@ -1,0 +1,76 @@
+@import url('../blocks/header/header.css');
+@import url('../blocks/search/search.css');
+@import url('../blocks/about_author/about_author.css');
+@import url('../blocks/card/card.css');
+@import url('../blocks/main/main.css');
+@import url('../blocks/link/link.css');
+@import url('../blocks/copiright/copiright.css');
+@import url('../blocks/logos/logos.css');
+@import url('../blocks/used_tech/used_tech.css');
+@import url('../blocks/swiper/swiper.css');
+@import url('../blocks/swiper/swiper.min.css');
+@import url('../blocks/swiper/swiper_ad.css');
+
+@import url('https://rsms.me/inter/inter.css');
+html { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  html { font-family: 'Inter var', sans-serif; }
+}
+
+@font-face {
+	src: url('https://pictures.s3.yandex.net/frontend-developer/fonts/roboto-medium-webfont.woff');
+  font-family: 'Roboto Medium';
+}
+
+@font-face {
+	src: url('https://pictures.s3.yandex.net/frontend-developer/fonts/roboto-regular-webfont.woff');
+	font-family: 'Roboto';
+}
+
+@font-face {
+	src: url('https://pictures.s3.yandex.net/frontend-developer/fonts/robotoslab-regular-webfont.woff');
+  font-family: 'Roboto Slab';
+}
+
+/* div, h1, h2,h3, h4, h5, h6, p, a, section, img, footer, header, nav, form, input, button {
+    border-style: solid;
+    border-color: red;
+    border-width: 1px;
+} */
+
+html {
+  font-family: 'Roboto';
+  font-size: 18px;
+}
+
+body {
+  background: #E5E5E5;
+  display: flex;
+  flex-direction: column;
+  align-items : center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  }
+
+h2 {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2.22rem;
+  line-height: 2.56rem;
+  color: #1A1B22;
+}
+
+h3 {
+  font-family: 'Roboto Slab';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.44rem;
+  line-height: 1.67rem;
+  color: #1A1B22;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.33rem;
+}

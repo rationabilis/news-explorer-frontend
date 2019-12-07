@@ -1,0 +1,13 @@
+@import url(./__hidden/__hidden.css);
+
+.error-message {
+  padding: auto 0px;
+  opacity: 1;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  margin-bottom: 13px;
+  color: #f00;
+  }

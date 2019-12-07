@@ -1,12 +1,13 @@
 @import url('./_footer/_footer.css');
 @import url('./_header/_header.css');
+@import url('./_white/_white.css');
 
 .link {
   display: block;
   font-style: normal;
-  color: #FFF;
+
   text-decoration: none;
-  margin: 0 0.67rem 0 0.83rem;
+  margin: 0 1.89rem 0 0;
   align-items: center;
   padding: 1.67rem 0 1.44rem 0;
 }
@@ -15,4 +16,8 @@
   box-sizing: border-box;
   border-bottom: 3px solid;
   padding: 1.67rem 0 1.28rem 0;
+}
+
+.link:visited {
+  color: #B6BCBF;
 }

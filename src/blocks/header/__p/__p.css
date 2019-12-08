@@ -1,8 +1,32 @@
 .header__p {
   width: 45.28rem;
-  margin: 1.33rem auto 1.5rem 5.78rem;
+  margin: 1.33rem 0 1.5rem 5.78rem;
 }
 
 .header__p:last-of-type {
-  margin: 1.33rem auto 4rem 5.78rem;
+  margin: 1.33rem 0 4rem 5.78rem;
+}
+
+/* переход от 1420px до 768px */
+@media screen and (max-width: 1420px)  {
+  .header__p {
+      width: 90%;
+      margin: 16px auto 16px auto;
+      }
+}
+
+/* переход от 768px до 320px */
+@media screen and (max-width: 760px)  {
+  .header__p {
+      width: 90%;
+      margin: 16px auto 16px auto;
+      }
+}
+
+/* переход от 768px до 320px */
+@media screen and (max-width: 1420px)  {
+  .header__p:last-of-type {
+      width: 90%;
+      margin: 16px auto 69px auto;
+      }
 }

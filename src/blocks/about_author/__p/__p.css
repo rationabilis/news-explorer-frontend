@@ -2,3 +2,18 @@
   width: 33.33rem;
   margin-bottom: 1.5rem;
 }
+
+/* переход от 1420px до 768px */
+@media screen and (max-width: 1420px)  {
+  .about-author__p {
+      width: auto;
+      margin-right: 40px;
+      }
+}
+
+/* переход от 768px до 320px */
+@media screen and (max-width: 760px)  {
+  .about-author__p {
+      width: 90%;
+      }
+}

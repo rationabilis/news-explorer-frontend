@@ -9,8 +9,8 @@
   <meta name="author" content="Alexander Demin">
   <title>NewsExplorer</title>
   <link rel="icon" href="./images/favicon.png">
-  <!-- <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>"> -->
-  <link rel="stylesheet" href="./pages/saved_news.css">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.saved_news.css %>">
+  <!-- <link rel="stylesheet" href="./pages/saved_news.css"> -->
 </head>
 <body>
   <div class="main">
@@ -23,7 +23,7 @@
             <a class="link link_white" href="./about.html">О проекте</a>
             <a class="link link_white" href="./saved_news.html">Авторизоваться</a>
             <a class="link link_white" href="./saved_news.html">Сохранённые статьи</a>
-            <a class="link link_white" href="./index.html">Грета&#160&#160[-></a>
+            <a class="link link_white" href="./index.html">Грета&#160;&#160;[-></a>
         </nav>
       </header>
       <p class="saved-articles__grey-p">Сохранённые статьи</p>
@@ -96,7 +96,7 @@
               </div>
 
             <div class="card">
-                <div class="saved-articles__image saved-article__image2">
+                <div class="saved-articles__image saved-articles__image2">
                   <p class="saved-articles__category">Фотография</p>
                   <button class="delete-icon"></button>
                 </div>
@@ -128,6 +128,6 @@
     </footer>
 
   </div>
-  <!-- <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script> -->
+  <script src="<%= htmlWebpackPlugin.files.chunks.saved_news.entry %>"></script>
 </body>
 </html>

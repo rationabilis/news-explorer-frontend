@@ -4,7 +4,9 @@ const WebpackMd5Hash = require('webpack-md5-hash');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  entry: { main: './src/index.js' },
+  entry: { main: './src/index.js',
+          saved_news:  './src/saved_news.js',
+          about: './src/about.js'},
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].[chunkhash].js'
@@ -42,14 +44,30 @@ module.exports = {
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin({ //
-      filename: 'style.[contenthash].css',
+    new MiniCssExtractPlugin({
+      filename: './pages/style.[contenthash].css',
     }),
     new HtmlWebpackPlugin({
       inject: false,
       template: './src/index.html',
       filename: 'index.html'
     }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: './src/saved_news.html',
+      filename: 'saved_news.html'
+    }),
+    new HtmlWebpackPlugin({
+      inject: false,
+      template: './src/about.html',
+      filename: 'about.html'
+    }),
     new WebpackMd5Hash()
-  ]
+  ],
+  optimization: {
+		splitChunks: {
+			chunks: 'all',
+		},
+		runtimeChunk: true,
+	}
 };

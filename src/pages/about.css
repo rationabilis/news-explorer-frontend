@@ -10,6 +10,8 @@
 @import url('../blocks/swiper/swiper.css');
 @import url('../blocks/swiper/swiper.min.css');
 @import url('../blocks/swiper/swiper_ad.css');
+@import url('../blocks/saved-articles/saved-articles.css');
+@import url('../blocks/search-results/search-results.css');
 
 @import url('https://rsms.me/inter/inter.css');
 html { font-family: 'Inter', sans-serif; }
@@ -32,11 +34,11 @@ html { font-family: 'Inter', sans-serif; }
   font-family: 'Roboto Slab';
 }
 
-/* div, h1, h2,h3, h4, h5, h6, p, a, section, img, footer, header, nav, form, input, button {
+div, h1, h2,h3, h4, h5, h6, p, a, section, img, footer, header, nav, form, input, button {
     border-style: solid;
     border-color: red;
     border-width: 1px;
-} */
+}
 
 html {
   font-family: 'Roboto';

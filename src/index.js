@@ -25,3 +25,5 @@ import './images/delete-icon-black.png';
 import './images/normal-icon.png';
 import './images/hover-icon.png';
 import './images/marked-icon.png';
+import './images/mobile_menu_button_black';
+import './images/mobile_menu_button_white';

@@ -2,3 +2,9 @@
   margin: 4.44rem auto auto 5.78rem;
   max-width: 530px;
 }
+
+@media screen and (max-width: 1200px)  {
+  .search-results__title {
+    margin: 5.2% 0 0 5.2%;
+    }
+}

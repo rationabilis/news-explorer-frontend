@@ -1,6 +1,19 @@
 .copiright {
   margin-left: 104px;
   color: #B6BCBF;
-  font-size: 0.89rem;
-  line-height: 1.22rem;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 700px)  {
+  .copiright {
+    font-size: 16px;
+    margin-left: 16px;
+    }
+}
+
+@media screen and (max-width: 1400px)  {
+  .copiright {
+    margin-left: 40px;
+    }
 }

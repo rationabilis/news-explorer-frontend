@@ -21,3 +21,9 @@
 .link:visited {
   color: #B6BCBF;
 }
+
+@media screen and (max-width: 1220px)  {
+  .link {
+    font-size: 16px;
+    }
+}

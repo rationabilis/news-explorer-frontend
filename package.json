@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/rationabilis/news-explorer-frontend/issues"
   },
-  "homepage": "https://github.com/rationabilis/news-explorer-frontend#readme",
+  "homepage": "https://github.com/rationabilis/news-explorer-fronten",
   "devDependencies": {
     "@babel/cli": "^7.7.4",
     "@babel/core": "^7.7.4",

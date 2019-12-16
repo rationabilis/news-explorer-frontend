@@ -1,20 +1,22 @@
-@import url('../blocks/header/header.css');
-@import url('../blocks/search/search.css');
-@import url('../blocks/search-results/search-results.css');
-@import url('../blocks/no-results/no-results.css');
-@import url('../blocks/preloader/preloader.css');
-@import url('../blocks/searching/searching.css');
-@import url('../blocks/about_author/about_author.css');
-@import url('../blocks/card/card.css');
-@import url('../blocks/cards/cards.css');
-@import url('../blocks/main/main.css');
-@import url('../blocks/link/link.css');
-@import url('../blocks/marked-icon/marked-icon.css');
-@import url('../blocks/circle-preloader/circle-preloader.css');
-@import url('../blocks/copiright/copiright.css');
-@import url('../blocks/logos/logos.css');
-@import url('../blocks/saved-articles/saved-articles.css');
-@import url('../blocks/delete-icon/delete-icon.css');
+@import url(./blocks/header/header.css);
+@import url(./blocks/search/search.css);
+@import url(./blocks/search-results/search-results.css);
+@import url(./blocks/no-results/no-results.css);
+@import url(./blocks/preloader/preloader.css);
+@import url(./blocks/searching/searching.css);
+@import url(./blocks/about_author/about_author.css);
+@import url(./blocks/card/card.css);
+@import url(./blocks/cards/cards.css);
+@import url(./blocks/main/main.css);
+@import url(./blocks/link/link.css);
+@import url(./blocks/marked-icon/marked-icon.css);
+@import url(./blocks/circle-preloader/circle-preloader.css);
+@import url(./blocks/copiright/copiright.css);
+@import url(./blocks/logos/logos.css);
+@import url(./blocks/popup/popup.css);
+@import url(./blocks/error-message/error-message.css);
+@import url(./blocks/button/button.css);
+@import url(./blocks/invisible/invisible.css);
 
 @import url('https://rsms.me/inter/inter.css');
 html { font-family: 'Inter', sans-serif; }
@@ -37,7 +39,8 @@ html { font-family: 'Inter', sans-serif; }
   font-family: 'Roboto Slab';
 }
 
-/* div, h1, h2,h3, h4, h5, h6, p, a, section, img, footer, header, nav, form, input, button {
+/* div, h1, h2,h3, h4, h5, h6, p, a, section, img, footer, header,
+nav, form, input, button {
     border-style: solid;
     border-color: red;
     border-width: 1px;

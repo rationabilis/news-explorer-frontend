@@ -1,17 +1,20 @@
-@import url('../blocks/header/header.css');
-@import url('../blocks/search/search.css');
-@import url('../blocks/about_author/about_author.css');
-@import url('../blocks/card/card.css');
-@import url('../blocks/main/main.css');
-@import url('../blocks/link/link.css');
-@import url('../blocks/copiright/copiright.css');
-@import url('../blocks/logos/logos.css');
-@import url('../blocks/used_tech/used_tech.css');
-@import url('../blocks/swiper/swiper.css');
-@import url('../blocks/swiper/swiper.min.css');
-@import url('../blocks/swiper/swiper_ad.css');
-@import url('../blocks/saved-articles/saved-articles.css');
-@import url('../blocks/search-results/search-results.css');
+@import url('../../blocks/header/header.css');
+@import url('../../blocks/search/search.css');
+@import url('../../blocks/search-results/search-results.css');
+@import url('../../blocks/no-results/no-results.css');
+@import url('../../blocks/preloader/preloader.css');
+@import url('../../blocks/searching/searching.css');
+@import url('../../blocks/about_author/about_author.css');
+@import url('../../blocks/card/card.css');
+@import url('../../blocks/cards/cards.css');
+@import url('../../blocks/main/main.css');
+@import url('../../blocks/link/link.css');
+@import url('../../blocks/marked-icon/marked-icon.css');
+@import url('../../blocks/circle-preloader/circle-preloader.css');
+@import url('../../blocks/copiright/copiright.css');
+@import url('../../blocks/logos/logos.css');
+@import url('../../blocks/saved-articles/saved-articles.css');
+@import url('../../blocks/delete-icon/delete-icon.css');
 
 @import url('https://rsms.me/inter/inter.css');
 html { font-family: 'Inter', sans-serif; }
@@ -45,13 +48,6 @@ html {
   font-size: 18px;
 }
 
-@media screen and (max-width: 720px)  {
-  html {
-    font-size: 14px;
-    }
-}
-
-
 body {
   background: #E5E5E5;
   display: flex;
@@ -59,7 +55,7 @@ body {
   align-items : center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  }
+}
 
 h2 {
   font-family: 'Roboto Slab';
@@ -82,26 +78,4 @@ h3 {
 p {
   font-size: 1rem;
   line-height: 1.33rem;
-}
-
-
-@media screen and (max-width: 1420px)  {
-  h2 {
-    font-size: 30px;
-    line-height: 34px;
-      }
-}
-
-@media screen and (max-width: 1420px)  {
-  h3 {
-    font-size: 22px;
-    line-height: 24px;
-      }
-}
-
-@media screen and (max-width: 720px)  {
-  h3 {
-    font-size: 22px;
-    line-height: 26px;
-      }
 }

@@ -9,8 +9,8 @@
   <meta name="author" content="Alexander Demin">
   <title>NewsExplorer</title>
   <link rel="icon" href="./images/favicon.png">
-  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.saved_news.css %>">
-  <!-- <link rel="stylesheet" href="./pages/saved_news.css"> -->
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.savednews.css %>">
+  <!-- <link rel="stylesheet" href="./pages/savednews.css"> -->
 </head>
 <body>
   <div class="main">
@@ -19,11 +19,11 @@
       <header class="header">
         <p class="header__logo header__logo_black">NewsExplorer</p>
         <nav class="header__menu header__menu_logged-in">
-            <a class="link link_white" href="./index.html">Главная</a>
-            <a class="link link_white" href="./about.html">О проекте</a>
-            <a class="link link_white" href="./saved_news.html">Авторизоваться</a>
-            <a class="link link_white" href="./saved_news.html">Сохранённые статьи</a>
-            <a class="link link_white" href="./index.html">Грета&#160;&#160;[-></a>
+            <a class="link link_white" href="../">Главная</a>
+            <a class="link link_white" href="../about/">О проекте</a>
+            <a class="link link_white" href="./">Авторизоваться</a>
+            <a class="link link_white" href="./">Сохранённые статьи</a>
+            <a class="link link_white" href="../">Грета&#160;&#160;[-></a>
         </nav>
       </header>
       <p class="saved-articles__grey-p">Сохранённые статьи</p>
@@ -117,17 +117,17 @@
     <footer class="header">
       <p class="copiright">&copy; 2019 Supersite</p>
       <nav class="header__menu">
-        <a class="link link_footer" href="./index.html">Главная</a>
-        <a class="link link_footer" href="./about.html">О проекте</a>
+        <a class="link link_footer" href="../">Главная</a>
+        <a class="link link_footer" href="../about/">О проекте</a>
         <a class="link link_footer" href="http://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
       </nav>
       <div class="logos">
-        <a class="logos__ref" href="http://www.github.com" target="_blank"><img class="logos__pic" src="./images/github_logo.png" alt="Лого Гитхаба"></a>
-        <a class="logos__ref" href="http://www.facebook.com" target="_blank"><img class="logos__pic" src="./images/facebook_logo.png" alt="Лого Фейсбука"></a>
+        <a class="logos__ref" href="http://www.github.com" target="_blank"><img class="logos__pic" src="../images/github_logo.png" alt="Лого Гитхаба"></a>
+        <a class="logos__ref" href="http://www.facebook.com" target="_blank"><img class="logos__pic" src="../images/facebook_logo.png" alt="Лого Фейсбука"></a>
       </div>
     </footer>
 
   </div>
-  <script src="<%= htmlWebpackPlugin.files.chunks.saved_news.entry %>"></script>
+  <script src="<%= htmlWebpackPlugin.files.chunks.savednews.entry %>"></script>
 </body>
 </html>

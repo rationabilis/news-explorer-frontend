@@ -12,3 +12,11 @@
 
   color: #B6BCBF;
 }
+
+@media (max-width: 1220px) {
+  .card__source  {
+    margin: auto 16px 0 16px;
+    position: absolute;
+    bottom: 16px;
+  }
+}

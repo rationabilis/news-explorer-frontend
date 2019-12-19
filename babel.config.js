@@ -11,7 +11,11 @@ const presets = [
             /* yandex: "19" */
       },
       useBuiltIns: "usage",
-      corejs: "3.4.1"
+      corejs: "3.4.1",
+      "targets": {
+        "esmodules": true,
+        "ie": "11"
+      }
     }
   ],
 ];

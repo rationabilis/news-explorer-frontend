@@ -5,3 +5,9 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+@media (max-width: 1220px) {
+  .cards {
+    margin: 32px 24px 0 40px;
+  }
+}

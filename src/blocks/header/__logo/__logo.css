@@ -7,20 +7,18 @@
   font-size: 1.11rem;
   line-height: 1.33rem;
   align-items: center;
-
   margin-left: 5.78rem;
-
 }
 
-@media screen and (max-width: 700px)  {
+@media (max-width: 700px)  {
   .header__logo {
-    font-size: 16px;
     margin-left: 16px;
+    font-size: 16px;
     }
 }
 
-@media screen and (max-width: 1400px)  {
+@media (max-width: 1200px)  {
   .header__logo {
-    margin-left: 40px;
+    margin: 40px;
     }
 }

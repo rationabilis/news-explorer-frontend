@@ -5,5 +5,14 @@
   font-size: 3.33rem;
   line-height: 3.56rem;
   width: 33.78rem;
-  margin: 4.44rem auto 0 23.11rem;
+  margin: 4.44rem auto 0 0;
+  }
+
+  @media (max-width: 1220px) {
+    .search__h1 {
+      font-size: 36px;
+      line-height: 40px;
+      width: 385px;
+      margin: 38px auto 0 0;
+    }
   }

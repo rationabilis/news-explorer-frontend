@@ -16,3 +16,10 @@
 .saved-articles__image3 {
   background-image: url('../../../images/taiga2.png');
 }
+
+@media (max-width: 1220px) {
+  .saved-articles__image {
+    width: 224px;
+    height: 150px;
+  }
+}

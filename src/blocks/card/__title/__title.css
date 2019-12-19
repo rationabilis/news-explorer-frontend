@@ -1,3 +1,9 @@
 .card__title {
   margin: 0 1.33rem 0.89rem 1.33rem;
 }
+
+@media (max-width: 1220px) {
+  .card__title {
+    margin: 12px 16px 10px 16px;
+  }
+}

@@ -18,3 +18,10 @@
 .card__image3 {
   background-image: url('../../../images/taiga.png');
 }
+
+@media (max-width: 1220px) {
+  .card__image {
+    width: 224px;
+    height: 150px;
+  }
+}

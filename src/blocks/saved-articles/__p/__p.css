@@ -1,3 +1,11 @@
 .saved-articles__p {
   margin: 30px 0 56px 104px;
 }
+
+@media (max-width: 1220px)  {
+  .saved-articles__p {
+    margin: 16px auto 32px 40px;
+    font-size: 14px;
+    line-height: 24px;
+    }
+}

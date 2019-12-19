@@ -3,8 +3,9 @@
   max-width: 530px;
 }
 
-@media screen and (max-width: 1200px)  {
+@media (max-width: 1200px)  {
   .search-results__title {
-    margin: 5.2% 0 0 5.2%;
+    margin: 16px auto 0 40px;
+    width: 336px;
     }
 }

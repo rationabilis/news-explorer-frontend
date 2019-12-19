@@ -3,15 +3,16 @@
 }
 
 /* переход от 1420px до 768px */
-@media screen and (max-width: 1420px)  {
+@media (max-width: 1420px)  {
   .about-author__avatar {
       width: calc(232px + (464 - 232) * (100vw - 768px)/(1420 - 768));
+      height: calc(232px + (464 - 232) * (100vw - 768px)/(1420 - 768));
       margin: 61px 32px 61px 40px;
       }
 }
 
 /* переход от 768px до 320px */
-@media screen and (max-width: 760px)  {
+@media (max-width: 760px)  {
   .about-author__avatar {
       width: 90%;
       }

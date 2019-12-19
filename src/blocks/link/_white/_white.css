@@ -19,18 +19,20 @@
   margin-right: 0;
   }
 
-@media screen and (max-width: 1220px)  {
+@media (max-width: 1220px)  {
   .link.link_white {
+    display: flex;
+    justify-content: center;
     font-size: 16px;
-    padding: 0 14px 0 15px;
+    padding: 0 20px 0 0px;
     height: 40px;
-    margin: 0 16px 0 2px;
+    margin: 0 0 0 0;
     }
 }
 
 
 
-@media screen and (max-width: 1220px)  {
+@media (max-width: 1220px)  {
   .link.link_white:nth-child(5) {
     font-size: 16px;
     padding: 0 14px 0 15px;

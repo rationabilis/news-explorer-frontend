@@ -15,3 +15,9 @@
   margin: 0;
   padding: 13px 13px;
 }
+
+@media (max-width: 1220px) {
+  .delete-icon__message {
+    display: none;
+    }
+}

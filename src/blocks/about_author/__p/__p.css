@@ -4,10 +4,11 @@
 }
 
 /* переход от 1420px до 768px */
-@media screen and (max-width: 1420px)  {
+@media screen and (max-width: 1220px)  {
   .about-author__p {
       width: auto;
       margin-right: 40px;
+      margin-top: 0;
       }
 }
 

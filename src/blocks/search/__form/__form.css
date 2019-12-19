@@ -9,5 +9,13 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin: 3.61rem auto 4.44rem 23.11rem;
+  margin: 3.61rem auto 4.44rem 0;
+}
+
+@media (max-width: 1220px) {
+  .search__form {
+    width: 448px;
+    height: 56px;
+    margin: 48px auto 48px 0;
+  }
 }

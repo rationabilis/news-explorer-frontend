@@ -1,4 +1,12 @@
 .saved-articles__grey-p {
   color: rgba(26, 27, 34, 0.5);
-  margin: 40px 0 -52px 104px;
+  margin: 40px auto -52px 104px;
+}
+
+@media (max-width: 1220px) {
+  .saved-articles__grey-p {
+    font-size: 14px;
+    line-height: 24px;
+    margin: 24px auto 0 40px;
+  }
 }

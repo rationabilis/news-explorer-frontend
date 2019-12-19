@@ -10,3 +10,9 @@
 
   color: #B6BCBF;
 }
+
+@media (max-width: 1220px) {
+  .card__date {
+    margin: 16px auto 0 16px;
+  }
+}

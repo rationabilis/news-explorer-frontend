@@ -22,8 +22,9 @@
   color: #B6BCBF;
 }
 
-@media screen and (max-width: 1220px)  {
+@media (max-width: 1220px)  {
   .link {
     font-size: 16px;
+    margin: 0 0 0 0;
     }
 }

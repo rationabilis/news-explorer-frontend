@@ -1,3 +1,5 @@
+@import url('./_about/_about.css');
+
 .header__p {
   width: 45.28rem;
   margin: 1.33rem 0 1.5rem 5.78rem;
@@ -23,10 +25,9 @@
       }
 }
 
-/* переход от 768px до 320px */
-@media screen and (max-width: 1420px)  {
+@media (max-width: 1220px)  {
   .header__p:last-of-type {
       width: 90%;
-      margin: 16px auto 69px auto;
+      margin: 16px auto 40px auto;
       }
 }

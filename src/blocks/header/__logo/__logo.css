@@ -10,15 +10,17 @@
   margin-left: 5.78rem;
 }
 
-@media (max-width: 700px)  {
-  .header__logo {
-    margin-left: 16px;
-    font-size: 16px;
-    }
-}
 
 @media (max-width: 1200px)  {
   .header__logo {
     margin: 40px;
+    }
+}
+
+
+@media (max-width: 700px)  {
+  .header__logo {
+    margin: 16px auto 16px 16px;
+    font-size: 16px;
     }
 }

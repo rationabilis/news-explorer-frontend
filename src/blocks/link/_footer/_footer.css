@@ -18,3 +18,10 @@
     font-size: 18px;
     }
 }
+
+@media (max-width: 700px)  {
+  .link.link_footer {
+    padding: 0 0 26px 16px;
+    margin-right: auto;
+    }
+}

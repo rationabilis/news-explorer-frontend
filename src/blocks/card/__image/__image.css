@@ -25,3 +25,10 @@
     height: 150px;
   }
 }
+
+@media (max-width: 700px) {
+  .card__image {
+    width: 288px;
+    height: 196px;
+  }
+}

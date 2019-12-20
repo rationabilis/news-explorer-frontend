@@ -3,3 +3,9 @@
   grid-row: 2/2;
   margin: 0;
 }
+
+@media (max-width: 1200px)  {
+  .swiper__name {
+    font-size: 20px;
+  }
+}

@@ -1,0 +1,30 @@
+.used-tech__list {
+  width: 600px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 93px 216px auto auto;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1200px)  {
+  .used-tech__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 87%;
+    margin: 3px auto 34px 40px;
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 700px)  {
+  .used-tech__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 87%;
+    margin: 0 auto 6px auto;
+    flex-wrap: wrap;
+  }
+}

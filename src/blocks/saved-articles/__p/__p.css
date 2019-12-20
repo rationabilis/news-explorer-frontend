@@ -9,3 +9,11 @@
     line-height: 24px;
     }
 }
+
+@media (max-width: 1220px)  {
+  .saved-articles__p {
+    margin: 16px 17px 32px 15px;
+    font-size: 18px;
+    line-height: 24px;
+    }
+}

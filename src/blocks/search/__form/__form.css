@@ -19,3 +19,15 @@
     margin: 48px auto 48px 0;
   }
 }
+
+@media (max-width: 700px) {
+  .search__form {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    width: 100%;
+    margin: 124px 0 0 0; 
+    height: auto;
+    padding-bottom: 32px;
+  }
+}

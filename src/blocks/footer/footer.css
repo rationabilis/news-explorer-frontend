@@ -1,0 +1,11 @@
+
+@media (max-width: 700px)  {
+  .footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+    padding-top: 15px;
+    align-items: flex-start;
+  }
+}

@@ -15,3 +15,14 @@
 .search__input::placeholder {
   color: #B6BCBF;
 }
+
+@media (max-width: 700px) {
+  .search__input {
+    width: 256px;
+    height: 56px;
+    margin: 0 16px 0 16px;
+    padding: 0 16px;
+    border-radius: 100px;
+    background-color: white;
+  }
+}

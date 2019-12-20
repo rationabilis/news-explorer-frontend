@@ -7,3 +7,24 @@
 .swiper__gitref:visited {
   color: #B6BCBF;
 }
+
+@media (max-width: 1200px)  {
+  .swiper__gitref {
+    margin:50px 58px 68px auto;
+  }
+}
+
+
+@media (max-width: 700px)  {
+  .swiper__gitref {
+    order: 10;
+    margin: 0 auto 31px auto;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    border: 1px solid #1A1B22;
+    box-sizing: border-box;
+    border-radius: 80px;
+    padding: 15px 69px 17px 69px;
+  }
+}

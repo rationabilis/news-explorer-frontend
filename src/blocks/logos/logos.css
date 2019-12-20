@@ -13,3 +13,10 @@
     margin-right: 17px;
   }
 }
+
+
+@media (max-width: 700px) {
+  .logos {
+    margin: 7px 18px auto auto;
+  }
+}

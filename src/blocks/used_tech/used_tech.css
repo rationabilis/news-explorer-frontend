@@ -1,6 +1,7 @@
 @import url('./__p/__p.css');
 @import url('./__h/__h.css');
 @import url('./__tech/__tech.css');
+@import url('./__list/__list.css');
 
 .used-tech {
   background: #F5F6F7;
@@ -9,4 +10,15 @@
   justify-content: start;
   flex-wrap: wrap;
   width: 100%;
+}
+
+@media (max-width: 1000px)  {
+  .used-tech {
+    background: #F5F6F7;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    flex-wrap: wrap;
+    width: 100%;
+  }
 }

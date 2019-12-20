@@ -10,3 +10,11 @@
     margin: 16px auto 0 0;
   }
 }
+
+@media (max-width: 700px) {
+  .search__p {
+    width: auto;
+    height: auto;
+    margin: 16px 16px 0 16px;
+  }
+}

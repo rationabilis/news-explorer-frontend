@@ -1,6 +1,9 @@
 @import url('./__avatar/__avatar.css');
 @import url('./__h/__h.css');
 @import url('./__p/__p.css');
+@import url('./__text/__text.css');
+@import url('./_main/_main.css');
+
 
 .about-author {
   width: 100%;
@@ -8,4 +11,13 @@
   flex-direction: row;
   background: white;
   margin: 0 auto 0 0;
+  flex-wrap: wrap;
+}
+
+@media screen and (max-width: 700px)  {
+  .about-author {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 }

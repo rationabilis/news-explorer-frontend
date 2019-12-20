@@ -16,3 +16,13 @@
       margin: 38px auto 0 0;
     }
   }
+
+  @media (max-width: 700px)  {
+    .search__h1 {
+      font-size: 36px;
+      line-height: 40px;
+      width: 250px;
+      margin: 30px auto 0 19px;
+    }
+  }
+  

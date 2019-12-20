@@ -3,3 +3,11 @@
   height: 1.11rem;
   margin-right: 1.56rem;
 }
+
+@media (max-width: 700px) {
+  .logos__pic {
+    margin: 0 0 0 28px;
+    width: 20px;
+    height: 20px;
+  }
+}

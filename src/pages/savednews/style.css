@@ -15,6 +15,7 @@
 @import url('../../blocks/logos/logos.css');
 @import url('../../blocks/saved-articles/saved-articles.css');
 @import url('../../blocks/delete-icon/delete-icon.css');
+@import url('../../blocks/footer/footer.css');
 
 @import url('https://rsms.me/inter/inter.css');
 html { font-family: 'Inter', sans-serif; }
@@ -49,14 +50,13 @@ html {
 }
 
 body {
-  max-width: 1440px;
-  margin: 0;
   background: #E5E5E5;
   display: flex;
   flex-direction: column;
   align-items : center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0 auto;
 }
 
 h2 {

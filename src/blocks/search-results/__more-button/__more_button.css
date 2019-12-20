@@ -24,3 +24,13 @@
     border-radius: 80px;
   }
 }
+
+@media (max-width: 700px) {
+  .search-results__more-button {
+    width: 288px;
+    height: 56px;
+    margin: 6px 16px 33px 16px;
+    padding: 17px 16px 17px 16px;
+    border-radius: 100px;
+  }
+}

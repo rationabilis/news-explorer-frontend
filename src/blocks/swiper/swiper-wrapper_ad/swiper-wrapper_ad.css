@@ -1,3 +1,15 @@
 .swiper-wrapper_ad {
-  margin-bottom: 73px;
+  margin-bottom: 53px;
+}
+
+@media (max-width: 1200px)  {
+  .swiper-wrapper_ad {
+    margin-bottom: 79px;
+  }
+}
+
+@media (max-width: 700px)  {
+  .swiper-wrapper_ad {
+    margin-bottom: 21px;
+  }
 }

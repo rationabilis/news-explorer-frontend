@@ -12,6 +12,7 @@
 @import url('../../blocks/swiper/swiper_ad.css');
 @import url('../../blocks/saved-articles/saved-articles.css');
 @import url('../../blocks/search-results/search-results.css');
+@import url('../../blocks/footer/footer.css');
 
 @import url('https://rsms.me/inter/inter.css');
 html { font-family: 'Inter', sans-serif; }
@@ -59,7 +60,9 @@ body {
   align-items : center;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0 auto;
   }
+
 
 h2 {
   font-family: 'Roboto Slab';
@@ -85,23 +88,17 @@ p {
 }
 
 
-@media screen and (max-width: 1420px)  {
+@media screen and (max-width: 1220px)  {
   h2 {
     font-size: 30px;
     line-height: 34px;
       }
 }
 
-@media screen and (max-width: 1420px)  {
+@media screen and (max-width: 1220px)  {
   h3 {
     font-size: 22px;
     line-height: 24px;
       }
 }
 
-@media screen and (max-width: 720px)  {
-  h3 {
-    font-size: 22px;
-    line-height: 26px;
-      }
-}

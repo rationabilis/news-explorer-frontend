@@ -17,6 +17,7 @@
 @import url('./blocks/error-message/error-message.css');
 @import url('./blocks/button/button.css');
 @import url('./blocks/invisible/invisible.css');
+@import url('./blocks/footer/footer.css');
 
 @import url('https://rsms.me/inter/inter.css');
 html { font-family: 'Inter', sans-serif; }
@@ -57,9 +58,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items : center;
-  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0 auto;
 }
 
 h2 {

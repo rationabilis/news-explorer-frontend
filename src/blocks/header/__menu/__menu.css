@@ -22,5 +22,6 @@
 @media (max-width: 700px)  {
   .header__menu {
     display: none;
+    margin: 0;
     }
 }

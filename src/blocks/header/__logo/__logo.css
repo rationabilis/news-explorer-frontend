@@ -1,7 +1,7 @@
 @import url('./_black/_black.css');
 
 .header__logo {
-  font-family: Roboto Slab;
+  font-family: Roboto Slab, Helvetica, Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 1.11rem;

@@ -1,3 +1,17 @@
 .search__page {
-  margin: 3.61rem auto 4.44rem auto;
+  width: 608px;
+  margin: 0;
+}
+
+@media (max-width: 1220px) {
+  .search__page {
+    width: 448px;
+    margin: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .search__page {
+    width: 100%;
+  }
 }

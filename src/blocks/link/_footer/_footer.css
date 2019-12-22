@@ -10,6 +10,7 @@
 
 .link.link_footer:hover {
   padding: 1.67rem 23px 1.46rem 23px;
+  border-bottom: 0;
 }
 
 @media (max-width: 1200px)  {

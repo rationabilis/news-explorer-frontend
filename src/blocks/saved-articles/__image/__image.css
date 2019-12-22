@@ -9,11 +9,11 @@
   position: relative;
 }
 
-.saved-articles__image2 {
+.saved-articles__image_ogonki2 {
   background-image: url('../../../images/ogonki2.png');
 }
 
-.saved-articles__image3 {
+.saved-articles__image_taiga2 {
   background-image: url('../../../images/taiga2.png');
 }
 

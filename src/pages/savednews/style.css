@@ -9,7 +9,7 @@
 @import url('../../blocks/cards/cards.css');
 @import url('../../blocks/main/main.css');
 @import url('../../blocks/link/link.css');
-@import url('../../blocks/marked-icon/marked-icon.css');
+@import url('../../blocks/icon/icon.css');
 @import url('../../blocks/circle-preloader/circle-preloader.css');
 @import url('../../blocks/copiright/copiright.css');
 @import url('../../blocks/logos/logos.css');
@@ -45,7 +45,7 @@ html { font-family: 'Inter', sans-serif; }
 } */
 
 html {
-  font-family: 'Roboto';
+  font-family: Roboto, Helvetica, Arial, sans-serif;
   font-size: 18px;
 }
 

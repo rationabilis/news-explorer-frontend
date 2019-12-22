@@ -1,6 +1,6 @@
 /* Результаты поиска */
 @import url('./__title/__title.css');
-@import url('./__more-button/__more_button.css');
+@import url('./__button/__button.css');
 
 .search-results {
   font-family: Roboto Slab;

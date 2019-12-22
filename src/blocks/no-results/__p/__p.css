@@ -1,4 +1,4 @@
-.no-results__p {
+.no-results__text {
   width: 356px;
   height: 48px;
 
@@ -6,4 +6,10 @@
   margin: 0 auto 4.44rem auto;
 
   color: #B6BCBF;
+}
+
+@media (max-width: 700px) {
+  .no-results__text {
+    width: 80%;
+  }
 }

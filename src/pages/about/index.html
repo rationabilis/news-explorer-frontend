@@ -10,8 +10,6 @@
   <title>NewsExplorer</title>
   <link rel="icon" href="../images/favicon.png">
   <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.about.css %>">
-  <!-- <link rel="stylesheet" href="./pages/about.css"> -->
-  <!-- <link rel="stylesheet" href="../../blocks/swiper/swiper.min.css"> -->
 
 </head>
 <body>
@@ -27,6 +25,7 @@
               <a class="link link_white" href="../savednews/index.html">Сохранённые статьи</a>
               <a class="link link_white" href="../index.html">Грета&#160;&#160;[→</a>
             </nav>
+            <div class="header__mobile-button header__mobile-button_black"></div>
           </header>
           <h2 class="search-results__title search-results__title_about">Клиентам</h2>
           <p class="header__p header__p_about">Этот сайт — дипломный проект студента Яндекс.Практикума.
@@ -71,11 +70,11 @@
 
     <section class="about-author">
       <img class="about-author__avatar" src="../images/author_avatar.png" alt="Портрет автора">
-      <div class="about-author__text">
-        <h2 class="about-author__h">Об авторе</h2>
-        <p class="about-author__p">Это блок с описанием автора проекта. Здесь следует указать,
+      <div class="about-author__description">
+        <h2 class="about-author__title">Об авторе</h2>
+        <p class="about-author__text">Это блок с описанием автора проекта. Здесь следует указать,
           как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
-        <p class="about-author__p">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились,
+        <p class="about-author__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились,
           и чем можете помочь потенциальным заказчикам.</p>
       </div>
     </section>
@@ -140,27 +139,6 @@
   </div>
 
   <!-- Скрипты -->
-  <script src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
-      <!-- Swiper JS -->
-<!--       <script src="../blocks/swiper/swiper.min.css"></script> -->
-      <!-- Initialize Swiper -->
-<!--       <script>
-          var swiper = new Swiper('.swiper-container', {
-            slidesPerView: 4,
-            spaceBetween: 16,
-            slidesPerGroup: 1,
-            loop: true,
-            loopFillGroupWithBlank: true,
-            pagination: {
-              el: '.swiper-pagination',
-              clickable: true,
-            },
-            navigation: {
-              nextEl: '.swiper-button-next',
-              prevEl: '.swiper-button-prev',
-            },
-          });
-        </script> -->
-
+    <script src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
 </body>
 </html>

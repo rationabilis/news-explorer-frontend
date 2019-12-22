@@ -1,7 +1,7 @@
 @import url(./__hidden/__hidden.css);
+@import url(./_reg/_reg.css);
 
 .error-message {
-  padding: auto 0px;
   opacity: 1;
   font-family: Inter;
   font-style: normal;

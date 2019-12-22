@@ -1,10 +1,12 @@
 @import url('./__input/__input.css');
 @import url('./__form/__form.css');
 @import url('./__button/__button.css');
-@import url('./__h1/__h1.css');
-@import url('./__p/__p.css');
+@import url('./__title/__title.css');
+@import url('./__subtitle/__subtitle.css');
+@import url('./__page/__page.css');
 
 .search {
+  font-family: Roboto Slab, Helvetica, Arial, sans-serif;
   width: 100%;
   background: url(../../images/search_background.png);
   background-repeat: no-repeat;
@@ -14,3 +16,17 @@
   align-items: center;
   color: white;
 }
+
+
+  @media (max-width: 768px) {
+    .search {
+      background: url(../../images/search_background_768.png);
+    }
+  }
+
+  @media (max-width: 320px)  {
+    .search {
+/*       background: url(../../images/search_background_320.png); */
+      background: url(./../../../src/images/search_background_320.png);
+    }
+  }

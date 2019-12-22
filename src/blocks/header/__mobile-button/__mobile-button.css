@@ -1,0 +1,16 @@
+@import url('./_black/_black.css');
+
+.header__mobile-button {
+  display: none;
+}
+
+@media (max-width: 700px)  {
+  .header__mobile-button {
+    display: block;
+    width: 24px;
+    height: 24px;
+    margin: 16px 16px 16px auto;
+    background-image: url('../../../images/mobile_menu_button_white.png');
+  }
+  
+}

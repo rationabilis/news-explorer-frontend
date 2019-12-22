@@ -1,8 +1,8 @@
 .search__form {
-  width: 33.78rem;
-  height: 3.56rem;
+  width: 608px;
+  height: 64px;
   background: #FFF;
-
+  padding: 0;
   box-sizing: border-box;
   border-radius: 5.56rem;
   display: flex;

@@ -11,11 +11,11 @@
 
 
 
-.card__image2{
+.card__image_ogonki{
   background-image: url('../../../images/ogonki.png');
 }
 
-.card__image3 {
+.card__image_taiga {
   background-image: url('../../../images/taiga.png');
 }
 

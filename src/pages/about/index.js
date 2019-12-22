@@ -1,7 +1,9 @@
 import './style.css';
 import Swiper from 'swiper';
 
-var swiper = new Swiper('.swiper-container', {
+// Скрипт не работал из html
+// eslint-disable-next-line no-unused-vars
+const swiper = new Swiper('.swiper-container', {
   slidesPerView: 4,
   spaceBetween: 16,
   slidesPerGroup: 1,

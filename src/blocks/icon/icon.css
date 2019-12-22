@@ -1,4 +1,4 @@
-.marked-icon {
+.icon {
   background-image: url('../../images/normal-icon.png');
   position: absolute;
   right: 1.33rem;
@@ -10,16 +10,16 @@
   border-radius: 8px;
 }
 
-.marked-icon:hover {
+.icon:hover {
   background-image: url('../../images/hover-icon.png');
 }
 
-.marked-icon_marked{
+.icon_marked{
   background-image: url('../../images/marked-icon.png');
 }
 
 @media (max-width: 1220px) {
-  .marked-icon {
+  .icon {
     position: absolute;
     right: 8px;
     top: 8px;
@@ -27,7 +27,7 @@
 }
 
 @media (max-width: 700px) {
-  .marked-icon {
+  .icon {
     position: absolute;
     right: 16px;
     top: 16px;

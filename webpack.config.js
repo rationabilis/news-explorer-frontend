@@ -1,20 +1,20 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 module.exports = {
-  entry: { main: './src/index.js',
-          savednews:  './src/pages/savednews/index.js',
-          about: './src/pages/about/index.js'},
+  entry: {
+    main: './src/index.js',
+    savednews: './src/pages/savednews/index.js',
+    about: './src/pages/about/index.js',
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: chunkData => {
-      return chunkData.chunk.name === 'main' ?
-        '[name].[hash].js' :
-        '[name]/[name].[hash].js'
-    }
+    filename: (chunkData) => (chunkData.chunk.name === 'main'
+      ? '[name].[hash].js'
+      : '[name]/[name].[hash].js'),
   },
   module: {
     rules: [
@@ -30,7 +30,7 @@ module.exports = {
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
-            options: { publicPath: '../', }
+            options: { publicPath: '../' },
           },
           {
             loader: 'css-loader',
@@ -40,8 +40,8 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               config: {
-                path:  __dirname + '/postcss.config.js'
-              }
+                path: `${__dirname}/postcss.config.js`,
+              },
             },
           },
         ],
@@ -78,16 +78,20 @@ module.exports = {
     ],
   },
   plugins: [
+    /* Файлы стилей сложены в отдельную папку, чтобы решить проблему
+    с потерей картинок в prod. Если положить файл главной страницы в корень,
+    то в dev-моде проект собирается, а в prod теряются картинки из css */
     new MiniCssExtractPlugin({
-      moduleFilename: chunk => (chunk.name === 'main' ? 'style.[contenthash].css' : '[name]/style.[contenthash].css'),
+      filename: 'css/style.[contenthash].css',
     }),
     new OptimizeCssAssetsPlugin({
       assetNameRegExp: /\.css$/g,
+      // eslint-disable-next-line global-require
       cssProcessor: require('cssnano'),
       cssProcessorPluginOptions: {
-        preset: ['default', { discardComments: { removeAll: true } }]
+        preset: ['default', { discardComments: { removeAll: true } }],
       },
-      canPrint: true
+      canPrint: true,
     }),
     new HtmlWebpackPlugin({
       inject: false,
@@ -109,4 +113,4 @@ module.exports = {
     }),
     new WebpackMd5Hash(),
   ],
-}
+};

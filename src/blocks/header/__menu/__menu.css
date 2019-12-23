@@ -1,11 +1,12 @@
 @import url('./_logged-in/_logged-in.css');
 
 .header__menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-right: 5.78rem;
-    align-items: center;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 5.78rem;
+  align-items: center;
 }
 
 .link:nth-child(n+4)  {

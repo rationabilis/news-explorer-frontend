@@ -1,11 +1,11 @@
-.swiper__image {
+.swiper-slide__image {
   grid-column: 1/1;
   grid-row: 2/2;
 }
 
 
 @media (max-width: 1200px)  {
-  .swiper__image {
+  .swiper-slide__image {
     width: 48px;
     height: 48px;
   }

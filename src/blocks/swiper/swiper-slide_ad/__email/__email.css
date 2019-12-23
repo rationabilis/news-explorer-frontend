@@ -1,4 +1,4 @@
-.swiper__email {
+.swiper-slide__email {
   grid-column: 2/2;
   grid-row: 2/2;
   margin: 2rem 0 0 0;
@@ -8,7 +8,7 @@
 }
 
 @media (max-width: 1200px)  {
-  .swiper__email {
+  .swiper-slide__email {
     margin: 30px 0 0 0;
   }
 }

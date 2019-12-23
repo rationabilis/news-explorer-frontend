@@ -4,7 +4,7 @@
   "description": "Яндекс практикум. Когорта 1. Демин Александр. Дипломный проект. Фронтенд. Версия v1.0.0.",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf dist && webpack --mode production",
+    "start": "rimraf dist && webpack --mode production",
     "dev": "webpack-dev-server --mode development --open --watch",
     "deploy": "gh-pages -d dist"
   },

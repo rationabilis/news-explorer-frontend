@@ -1,0 +1,8 @@
+@import url('./__title/__title.css');
+@import url('./__text/__text.css');
+
+.about-project {
+  width: 100%;
+  background-color: white;
+  color: #1A1B22;
+}

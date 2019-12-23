@@ -1,3 +1,9 @@
+@import url('./__date/__date.css');
+@import url('./__email/__email.css');
+@import url('./__image/__image.css');
+@import url('./__name/__name.css');
+@import url('./__text/__text.css');
+
 .swiper-slide_ad {
   width: 400px;
   min-height: 210px;

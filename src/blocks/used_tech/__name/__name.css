@@ -1,4 +1,4 @@
-.used-tech__p {
+.used-tech__name {
   width: auto;
   text-align: center;
   letter-spacing: .01rem;
@@ -6,7 +6,7 @@
 }
 
 @media (max-width: 700px)  {
-  .used-tech__p {
+  .used-tech__name {
     font-size: 18px;
     line-height: 24px;
   }

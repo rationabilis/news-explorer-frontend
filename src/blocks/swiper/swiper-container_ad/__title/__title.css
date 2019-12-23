@@ -1,17 +1,17 @@
-.swiper__title {
+.swiper-container__title {
   margin: 4rem 0 3.56rem 5.78rem;
 }
 
 
 @media (max-width: 1200px)  {
-  .swiper__title  {
+  .swiper-container__title  {
     width: 336px;
     margin: 41px auto 32px 40px;
   }
 }
 
 @media (max-width: 700px)  {
-  .swiper__title {
+  .swiper-container__title {
     width: 200px;
     margin: 33px auto 15px 16px;
     line-height: 40px;

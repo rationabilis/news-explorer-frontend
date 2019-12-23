@@ -1,4 +1,4 @@
-.swiper__text {
+.swiper-slide__text {
   grid-column: 1/span 2;
   grid-row: 3/3;
   width: 100%;

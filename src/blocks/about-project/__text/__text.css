@@ -1,0 +1,36 @@
+.about-project__text {
+  width: 45.28rem;
+  margin: 1.33rem 0 1.5rem 5.78rem;
+}
+
+.about-project__text:last-of-type {
+  margin: 1.33rem 0 77px 5.78rem;
+}
+
+@media (max-width: 1220px)  {
+  .about-project__text  {
+    width: 90%;
+    margin: 16px auto 28px auto;
+  }
+}
+
+@media (max-width: 1220px)  {
+  .about-project__text:last-of-type  {
+    width: 90%;
+    margin: 16px auto 40px auto;
+  }
+}
+
+@media (max-width: 700px)  {
+  .about-project__text  {
+      margin: 20px auto 24px auto;
+      font-size: 18px;
+      line-height: 24px;
+      }
+}
+
+@media (max-width: 700px)  {
+  .about-project__text:last-of-type {
+      margin: 16px auto 35px auto;
+      }
+}

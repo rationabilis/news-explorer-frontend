@@ -1,18 +1,18 @@
-.saved-articles__grey-p {
+.saved-articles__grey-title {
   color: rgba(26, 27, 34, 0.5);
   margin: 40px auto -52px 104px;
 }
 
 @media (max-width: 1220px) {
-  .saved-articles__grey-p {
+  .saved-articles__grey-title {
     font-size: 14px;
     line-height: 24px;
     margin: 24px auto 0 40px;
   }
 }
 
-@media (max-width: 1220px) {
-  .saved-articles__grey-p {
+@media (max-width: 700px) {
+  .saved-articles__grey-title {
     font-size: 12px;
     line-height: 24px;
     margin: 8px 16px -16px 16px;

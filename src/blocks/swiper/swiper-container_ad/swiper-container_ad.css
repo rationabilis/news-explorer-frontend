@@ -1,3 +1,6 @@
+@import url('./__title/__title.css');
+@import url('./__gitref/__gitref.css');
+
 .swiper-container_ad {
   width: 100%;
   background: #F5F6F7;

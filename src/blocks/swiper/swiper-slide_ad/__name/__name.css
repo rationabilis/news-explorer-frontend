@@ -1,11 +1,11 @@
-.swiper__name {
+.swiper-slide__name {
   grid-column: 2/2;
   grid-row: 2/2;
   margin: 0;
 }
 
 @media (max-width: 1200px)  {
-  .swiper__name {
+  .swiper-slide__name {
     font-size: 20px;
   }
 }

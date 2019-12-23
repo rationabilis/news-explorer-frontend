@@ -29,8 +29,7 @@
 }
 
 @media (max-width: 700px)  {
-  .header__mobile-button {
+  .popup.header__mobile-button {
     display: none;
   }
-  
 }

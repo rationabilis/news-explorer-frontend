@@ -9,7 +9,7 @@
   <meta name="author" content="Alexander Demin">
   <title>NewsExplorer</title>
   <link rel="icon" href="./images/favicon.png">
-  <link rel="stylesheet" href="css/style.7617db2237850fb3b962.css?dbe24d5d0f52c4c6e658">
+  <link rel="stylesheet" href="css/style.ae48c68446a08e84b493.css?bdb87ce6889ad8eaf9df">
 </head>
 <body>
   <div class="main">
@@ -24,10 +24,11 @@
           <a class="link link_header" href="./savednews/index.html">Сохранённые статьи</a>
           <a class="link link_header" href="./index.html">[-></a>
         </nav>
+        <div class="header__mobile-button"></div>
       </header>
       <div class="search__page">
-        <h1 class="search__h1">Что в мире творится?</h1>
-        <p class="search__p">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
+        <h1 class="search__title">Что в мире творится?</h1>
+        <p class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
 
         <form class="search__form" name="search">
             <input id="keyword" type="text" name="keyword" class="search__input" placeholder="Введите тему новости">
@@ -38,13 +39,13 @@
 
     <section class="searching invisible">
         <i class="circle-preloader"></i>
-        <p class="searching__p">Идет поиск новостей...</p>
+        <p class="searching__text">Идет поиск новостей...</p>
       </section>
 
     <section class="no-results invisible">
         <img class="no-results__pic" src="./images/not-found.png" alt=":(">
         <h3>Ничего не найдено</h3>
-        <p class="no-results__p">К сожалению по вашему запросу ничего не найдено.</p>
+        <p class="no-results__text">К сожалению по вашему запросу ничего не найдено.</p>
       </section>
 
     <section class="search-results">
@@ -53,7 +54,7 @@
 
           <div class="card">
             <div class="card__image">
-              <button class="marked-icon"></button>
+              <button class="icon"></button>
             </div>
 
             <h4 class="card__date">2 августа, 2019</h4>
@@ -66,8 +67,8 @@
           </div>
 
           <div class="card">
-              <div class="card__image card__image2">
-                <button class="marked-icon marked-icon_marked"></button>
+              <div class="card__image card__image_ogonki">
+                <button class="icon icon_marked"></button>
               </div>
 
               <h4 class="card__date">2 августа, 2019</h4>
@@ -80,8 +81,8 @@
             </div>
 
             <div class="card">
-                <div class="card__image card__image3">
-                  <button class="marked-icon"></button>
+                <div class="card__image card__image_taiga">
+                  <button class="icon"></button>
                 </div>
 
                   <h4 class="card__date">2 августа, 2019</h4>
@@ -94,23 +95,23 @@
 
 
         </div>
-        <button class="search-results__more-button">Показать еще</button>
+        <button class="search-results__button">Показать еще</button>
       </section>
 
     <section class="about-author about-author_main">
       <img class="about-author__avatar" src="./images/author_avatar.png" alt="Портрет автора">
-      <div class="about-author__text">
-        <h2 class="about-author__h">Об авторе</h2>
-        <p class="about-author__p">Это блок с описанием автора проекта. Здесь следует указать,
+      <div class="about-author__description">
+        <h2 class="about-author__title">Об авторе</h2>
+        <p class="about-author__text">Это блок с описанием автора проекта. Здесь следует указать,
           как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
-        <p class="about-author__p">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились,
+        <p class="about-author__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились,
           и чем можете помочь потенциальным заказчикам.</p>
       </div>
     </section>
 
-    <footer class="header footer">
+    <footer class="footer">
       <p class="copiright">&copy; 2019 Supersite</p>
-      <nav class="header__menu header__menu_footer">
+      <nav class="footer__menu">
         <a class="link link_footer" href="./index.html">Главная</a>
         <a class="link link_footer" href="./about/index.html">О проекте</a>
         <a class="link link_footer" href="http://praktikum.yandex.ru " target="_blank">Яндекс.Практикум</a>
@@ -128,13 +129,13 @@
             <h3 class="popup__title">Вход</h3>
 
             <form class="popup__form" name="login">
-                <p class="popup__p">Email</p>
+                <p class="popup__field">Email</p>
                 <input type="email" name="email" class="popup__input" placeholder="Введите почту">
                 <span class="error-message">Неправильный формат email</span>
 
-                <p class="popup__p">Пароль</p>
-                <input type="password" name="password" class="popup__input" placeholder="Введите пароль">
-                <span class="error-message">От 2 до 30 символов</span>
+                <p class="popup__field">Пароль</p>
+                <input type="password" name="password" minlength="8" class="popup__input" placeholder="Введите пароль">
+                <span class="error-message">Не менее 8 символов</span>
                 <button class="button popup__button" disabled>Войти</button>
 
             </form>
@@ -150,18 +151,19 @@
             <h3 class="popup__title">Регистрация</h3>
 
             <form class="popup__form" name="login">
-                <p class="popup__p">Email</p>
+                <p class="popup__field">Email</p>
                 <input type="email" name="email" class="popup__input" placeholder="Введите почту">
                 <span class="error-message">Неправильный формат email</span>
 
-                <p class="popup__p">Пароль</p>
-                <input type="password" name="password" class="popup__input" placeholder="Введите пароль">
+                <p class="popup__field">Пароль</p>
+                <input type="password" name="password" minlength="8" class="popup__input" placeholder="Введите пароль">
+                <span class="error-message">Не менее 8 символов</span>
+
+                <p class="popup__field">Имя</p>
+                <input type="text" name="password" minlength="2" maxlength="30" class="popup__input" placeholder="Введите своё имя">
                 <span class="error-message">От 2 до 30 символов</span>
 
-                <p class="popup__p">Имя</p>
-                <input type="text" name="password" class="popup__input" placeholder="Введите своё имя">
-                <span class="error-message">От 2 до 30 символов</span>
-
+                <p class="error-message error-message_reg">Такой пользователь уже есть</p>
                 <button class="button popup__button" disabled>Зарегистрироваться</button>
 
             </form>
@@ -180,7 +182,17 @@
               </div>
           </div>
 
+          <div class="popup invisible">
+                <nav class="mobile-menu">
+                  <img src="./images/close-button.png" alt="" class="popup__close">
+                  <a class="mobile-menu__link" href="../index.html">Главная</a>
+                  <a class="mobile-menu__link" href="./index.html">О проекте</a>
+                  <a class="mobile-menu__link" href="../savednews/index.html">Сохранённые статьи</a>
+                  <a class="mobile-menu__link" href="../index.html">Грета&#160;&#160;[→</a>
+                </nav>
+          </div>
+
   </div>
-  <script src="main.dbe24d5d0f52c4c6e658.js?dbe24d5d0f52c4c6e658"></script>
+  <script src="main.bdb87ce6889ad8eaf9df.js?bdb87ce6889ad8eaf9df"></script>
 </body>
 </html>

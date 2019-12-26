@@ -29,7 +29,7 @@
   .search-results__button {
     width: 288px;
     height: 56px;
-    margin: 6px 16px 33px 16px;
+    margin: 6px auto 33px auto;
     padding: 17px 16px 17px 16px;
     border-radius: 100px;
   }

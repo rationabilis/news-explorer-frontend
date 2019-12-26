@@ -7,8 +7,8 @@ const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 module.exports = {
   entry: {
     main: './src/index.js',
-    savednews: './src/pages/savednews/index.js',
-    about: './src/pages/about/index.js',
+    savednews: './src/savednews/index.js',
+    about: './src/about/index.js',
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -102,13 +102,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: false,
       hash: true,
-      template: './src/pages/savednews/index.html',
+      template: './src/savednews/index.html',
       filename: './savednews/index.html',
     }),
     new HtmlWebpackPlugin({
       inject: false,
       hash: true,
-      template: './src/pages/about/index.html',
+      template: './src/about/index.html',
       filename: './about/index.html',
     }),
     new WebpackMd5Hash(),

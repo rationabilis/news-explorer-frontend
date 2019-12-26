@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Yandex.Praktikum Diploma project">
+  <meta name="keywords" content="HTML5, CSS">
+  <meta name="author" content="Alexander Demin">
+  <title>NewsExplorer</title>
+  <link rel="icon" href="../images/favicon.png">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.savednews.css %>">
+</head>
+<body>
+  <div class="main">
+
+    <section class="saved-articles">
+      <header class="header">
+        <p class="header__logo header__logo_black">NewsExplorer</p>
+        <nav class="header__menu header__menu_logged-in">
+            <a class="link link_white" href="../index.html">Главная</a>
+            <a class="link link_white" href="../about/index.html">О проекте</a>
+            <a class="link link_white" href="./index.html">Авторизоваться</a>
+            <a class="link link_white" href="./index.html">Сохранённые статьи</a>
+            <a class="link link_white" href="../index.html">Грета&#160;&#160;[-></a>
+        </nav>
+        <div class="header__mobile-button header__mobile-button_black"></div>
+      </header>
+      <p class="saved-articles__grey-title">Сохранённые статьи</p>
+      <h2 class="saved-articles__title">Грета, у вас 5 сохранённых статей</h2>
+      <p class="saved-articles__subtitle">По ключевым словам: <b>Природа</b>, <b>Тайга</b> и <b>2 другим</b></p>
+    </section>
+
+    <section class="search-results">
+
+        <div class="cards cards_saved">
+
+          <div class="card">
+            <img src="../images/parki.png" class="card__image" alt="Парки">
+              <p class="card__category">Природа</p>
+              <button class="delete-icon"></button>
+
+            <h4 class="card__date">2 августа, 2019</h4>
+            <h3 class="card__title">Национальное достояние – парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад
+                здесь начала складываться система национальных парков – охраняемых
+                территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <h5 class="card__source">ДЗЕН</h5>
+
+          </div>
+
+          <div class="card">
+            <img src="../images/ogni.png" class="card__image" alt="Огни">
+            <p class="card__category">Природа</p>
+            <p class="delete-icon__message">Убрать из сохранённых</p>
+            <button class="delete-icon"></button>
+
+            <h4 class="card__date">2 августа, 2019</h4>
+            <h3 class="card__title">Лесные огоньки: история одной фотографии</h3>
+            <p class="card__text">Фотограф отвлеклась от освещения суровой политической
+                реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных
+                чудес природы.</p>
+            <h5 class="card__source">АФИША</h5>
+          </div>
+
+          <div class="card">
+            <img src="../images/forest.png" class="card__image" alt="Тайга">
+            <p class="card__category">Тайга</p>
+            <button class="delete-icon"></button>
+
+            <h4 class="card__date">2 августа, 2019</h4>
+            <h3 class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
+            <p class="card__text">Знаменитый фотограф снимает первозданные леса России,
+              чтобы рассказать о необходимости их сохранения. В этот раз он отправился
+              в Двинско-Пинежскую тайгу, где... </p>
+            <h5 class="card__source">МЕДИАЗОНА</h5>
+          </div>
+
+          <div class="card">
+            <img src="../images/parki.png" class="card__image" alt="Парки">
+            <p class="card__category">Парки</p>
+            <button class="delete-icon"></button>
+
+            <h4 class="card__date">2 августа, 2019</h4>
+            <h3 class="card__title">Национальное достояние – парки</h3>
+            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад
+                здесь начала складываться система национальных парков – охраняемых
+                территорий, где и сегодня каждый может приобщиться к природе.</p>
+            <h5 class="card__source">ДЗЕН</h5>
+          </div>
+
+          <div class="card">
+            <img src="../images/ogni.png" class="card__image" alt="Огни">
+            <p class="card__category">Фотография</p>
+            <button class="delete-icon"></button>
+
+            <h4 class="card__date">2 августа, 2019</h4>
+            <h3 class="card__title">Лесные огоньки: история одной фотографии</h3>
+            <p class="card__text">Фотограф отвлеклась от освещения суровой политической
+                реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных
+                чудес природы.</p>
+            <h5 class="card__source">АФИША</h5>
+          </div>
+
+
+        </div>
+    </section>
+
+    <footer class="footer">
+      <p class="copiright">&copy; 2019 Supersite</p>
+      <nav class="footer__menu">
+        <a class="link link_footer" href="../index.html">Главная</a>
+        <a class="link link_footer" href="../about/index.html">О проекте</a>
+        <a class="link link_footer" href="http://praktikum.yandex.ru" target="_blank">Яндекс.Практикум</a>
+      </nav>
+      <div class="logos">
+        <a class="logos__ref" href="http://www.github.com" target="_blank"><img class="logos__pic" src="../images/github_logo.png" alt="Лого Гитхаба"></a>
+        <a class="logos__ref" href="http://www.facebook.com" target="_blank"><img class="logos__pic" src="../images/facebook_logo.png" alt="Лого Фейсбука"></a>
+      </div>
+    </footer>
+
+  </div>
+  <script src="<%= htmlWebpackPlugin.files.chunks.savednews.entry %>"></script>
+</body>
+</html>

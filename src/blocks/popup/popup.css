@@ -1,12 +1,12 @@
-@import url('./__content/popup__content.css');
-@import url('./__close/popup__close.css');
-@import url('./__title/popup__title.css');
-@import url('./__form/popup__form.css');
-@import url('./__input/popup__input.css');
-@import url('./__button/popup__button.css');
-@import url('./_is-opened/popup_is-opened.css');
+@import url('./__content/__content.css');
+@import url('./__close/__close.css');
+@import url('./__title/__title.css');
+@import url('./__form/__form.css');
+@import url('./__input/__input.css');
+@import url('./__button/__button.css');
+@import url('./_is-opened/_is-opened.css');
 @import url('./__field/__field.css');
-@import url('./popup__under-button/popup__under-button.css');
+@import url('./popup__under-button/__under-button.css');
 @import url('./__success/__success.css');
 
 .popup {

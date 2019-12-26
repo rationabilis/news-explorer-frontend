@@ -3,6 +3,7 @@
 @import url('./__text/__text.css');
 @import url('./__source/__sourse.css');
 @import url('./__title/__title.css');
+@import url('./__category/__category.css');
 
 .card {
   position: relative;

@@ -1,0 +1,5 @@
+@media (max-width: 700px)  {
+  .header__mobile-button.header__mobile-button_white {
+    background-image: url('../../../../images/mobile_menu_button_white.png');
+  }
+}

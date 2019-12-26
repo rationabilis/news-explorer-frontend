@@ -16,9 +16,4 @@ node_modules
 # Файл с переменными окружения
 .env
 
-# Логи
-*.log
-
 dist
-
-.nojekyll

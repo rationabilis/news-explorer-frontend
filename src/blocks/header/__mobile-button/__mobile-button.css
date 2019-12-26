@@ -1,4 +1,5 @@
 @import url('./_black/_black.css');
+@import url('./_white/_white.css');
 
 .header__mobile-button {
   display: none;
@@ -10,7 +11,5 @@
     width: 24px;
     height: 24px;
     margin: 16px 16px 16px auto;
-    background-image: url('../../../images/mobile_menu_button_white.png');
   }
-
 }

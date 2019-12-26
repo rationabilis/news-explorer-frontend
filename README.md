@@ -11,14 +11,11 @@ https://github.com/rationabilis/news-explorer-frontend
 4. К API добавлен CORS
 5. Настроен Webpack, Babel, PostCSS
 6. Версии плагинов зафиксированы
-7. Команда dev запускает проект в режиме разработки с хот-релоудом
-8. Команда start запускает в продакшн-режиме без хот-релоуда
-9. Команда deploy публикует проект на gp-pages
-10. Отдельные для каждой страницы CSS-бандлы собираются в отдельной папке
-11. Чтобы развернуть проект, необходимо клонировать репозиторий и запустить npm install
-12. Для работы в режиме разработки выполните npm run dev
-13. Для сборки - npm run build
-14. Для публикации - npm run deploy
-15. Для публикации на Github pages - npm run gh-pages
-16. Фронтенд расположен на inscientia.ru и www.inscientia.ru
-16. Бэкенд расположен на api.inscientia.ru и www.api.inscientia.ru
+7. Бэкенд расположен на api.inscientia.ru и www.api.inscientia.ru
+8. Отдельные для каждой страницы CSS-бандлы собираются в отдельной папке
+9. Чтобы развернуть проект, необходимо клонировать репозиторий и запустить npm install
+10. Для работы в режиме разработки с хот-релоудом выполните npm run dev
+11. Для сборки - npm run build
+12. Для публикации - npm run deploy
+13. Для публикации на Github pages - npm run gh-pages
+14. Фронтенд расположен на inscientia.ru и www.inscientia.ru

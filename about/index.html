@@ -8,8 +8,8 @@
   <meta name="keywords" content="HTML5, CSS">
   <meta name="author" content="Alexander Demin">
   <title>NewsExplorer</title>
-  <link rel="icon" href="../images/favicon.png">
-  <link rel="stylesheet" href="../css/style.42c1dff221c7c0514a8b.css?bdb87ce6889ad8eaf9df">
+  <link rel="icon" href="../../images/favicon.png">
+  <link rel="stylesheet" href="../css/style.6be8e1061c118961784c.css?8fc60e436b8748f134ca">
 
 </head>
 <body>
@@ -69,7 +69,13 @@
     </section>
 
     <section class="about-author">
-      <img class="about-author__avatar" src="../images/author_avatar.png" alt="Портрет автора">
+
+      <picture>
+        <source media="(max-width: 320px)" srcset="../../images/author_avatar_320.png">
+        <source media="(min-width: 321px) and (maxwidth: 1440px)" srcset="../../images/author_avatar_768.png">
+        <img class="about-author__avatar" src="../../images/author_avatar_1440.png" alt="Портрет автора">
+      </picture>
+
       <div class="about-author__description">
         <h2 class="about-author__title">Об авторе</h2>
         <p class="about-author__text">Это блок с описанием автора проекта. Здесь следует указать,
@@ -117,7 +123,7 @@
 
       </div>
       <!-- Add Pagination -->
-      <div class="swiper-pagination swiper-pagination__ad"></div>
+      <div class="swiper-pagination swiper-pagination_ad"></div>
       <!-- Add Arrows -->
       <div class="swiper-button-next"></div>
       <div class="swiper-button-prev"></div>
@@ -139,6 +145,6 @@
   </div>
 
   <!-- Скрипты -->
-    <script src="../about/about.bdb87ce6889ad8eaf9df.js?bdb87ce6889ad8eaf9df"></script>
+    <script src="../about/about.8fc60e436b8748f134ca.js?8fc60e436b8748f134ca"></script>
 </body>
 </html>

@@ -30,3 +30,6 @@ import './images/hover-icon.png';
 import './images/marked-icon.png';
 import './images/mobile_menu_button_white.png';
 import './images/mobile_menu_button_black.png';
+
+import './js/components/header';
+import './js/constants/constants';

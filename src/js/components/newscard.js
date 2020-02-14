@@ -5,9 +5,16 @@ renderIcon — отвечает за отрисовку иконки карто�
 активная иконка залогиненного, неактивная иконка залогиненного. */
 
 export default class NewsCard {
-  constructor() {
+  constructor(cardData) {
+    this.data = cardData;
+  }
+
+  renderIcon() {
 
   }
 
-  renderIcon() {}
+
+  /*   like(evt) {
+    evt.target.classList.toggle('place-card__like-icon_liked');
+  } */
 }

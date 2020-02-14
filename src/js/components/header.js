@@ -5,16 +5,20 @@ render при вызове перерисовывает шапку в завис
 У этого объекта есть два обязательных свойства:
 isLoggedIn — залогинен ли пользователь;
 userName — имя, которое отображается в шапке залогиненного пользователя.
-props = {isLoggedIn: false, userName: Alexander, color: white}
+props = {isLoggedIn: true, userName: 'Alexander', color: 'white'}
 */
 
 export default class Header {
   constructor(props) {
     this.isLoggedIn = props.isLoggedIn;
-    this.userName = props.userName;
+    this.userName = props.name;
+    this.color = props.color;
   }
 
-  render(props) {
-
+  render() {
+    if (this.isLoggedIn) {
+      document.getElementById('userName').textContent = `${this.userName} [->`;
+      document.querySelector('.header__menu').classList.add('header__menu_logged-in');
+    }
   }
 }

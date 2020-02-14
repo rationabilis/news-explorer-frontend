@@ -22,7 +22,7 @@
           <a class="link link_header" href="./about/index.html">О проекте</a>
           <a class="link link_header" href="./savednews/index.html">Авторизоваться</a>
           <a class="link link_header" href="./savednews/index.html">Сохранённые статьи</a>
-          <a class="link link_header" href="./index.html">[-></a>
+          <a class="link link_header" href="./index.html" id="userName"></a>
         </nav>
         <div class="header__mobile-button  header__mobile-button_white"></div>
       </header>
@@ -52,44 +52,18 @@
         <h2 class="search-results__title">Результаты поиска</h2>
         <div class="cards">
 
+        <template id="card-template">
           <div class="card">
-            <img src="./images/park.png" class="card__image" alt="Парк">
+            <img src="" class="card__image" alt="">
             <button class="icon"></button>
 
-            <h4 class="card__date">2 августа, 2019</h4>
-            <h3 class="card__title">Национальное достояние – парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад
-                здесь начала складываться система национальных парков – охраняемых
-                территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <h5 class="card__source">ЛЕНТА.РУ</h5>
+            <h4 class="card__date"></h4>
+            <h3 class="card__title"></h3>
+            <p class="card__text"></p>
+            <h5 class="card__source"></h5>
 
           </div>
-
-          <div class="card">
-            <img src="./images/ogonki.png" class="card__image" alt="Огоньки">
-            <button class="icon icon_marked"></button>
-
-            <h4 class="card__date">2 августа, 2019</h4>
-            <h3 class="card__title">Лесные огоньки: история одной фотографии</h3>
-            <p class="card__text">Фотограф отвлеклась от освещения суровой политической
-                реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных
-                чудес природы.</p>
-            <h5 class="card__source">МЕДУЗА</h5>
-
-          </div>
-
-          <div class="card">
-            <img src="./images/taiga.png" class="card__image" alt="Тайга">
-            <button class="icon"></button>
-
-            <h4 class="card__date">2 августа, 2019</h4>
-            <h3 class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-            <p class="card__text">Знаменитый фотограф снимает первозданные леса России,
-              чтобы рассказать о необходимости их сохранения. В этот раз он отправился
-              в Двинско-Пинежскую тайгу, где... </p>
-            <h5 class="card__source">РИА</h5>
-          </div>
-
+        </template>
 
         </div>
         <button class="search-results__button">Показать еще</button>

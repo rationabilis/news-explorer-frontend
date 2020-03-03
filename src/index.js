@@ -31,41 +31,70 @@ import './images/marked-icon.png';
 import './images/mobile_menu_button_white.png';
 import './images/mobile_menu_button_black.png';
 
+import params from './js/components/params';
+import Form from './js/components/form';
+import ShowError from './js/components/error';
+import MainApi from './js/api/main-api';
+import NewsApi from './js/api/news-api';
+import NewsRender from './js/components/news-render';
 
-const Header = require('./js/components/header').default;
-const MainApi = require('./js/api/mainapi').default;
-const NewsApi = require('./js/api/newsapi').default;
-const NewsCardList = require('./js/components/newscardlist').default;
+const headerMenu = document.querySelector('.header__menu');
+const authorize = document.querySelector('#authorize');
 
-const { apiKey, days, lang } = require('./js/constants/constants');
+const userName = document.querySelector('#userName');
+const mainUrl = 'https://www.api.inscientia.ru';
+const mainApi = new MainApi(mainUrl);
 
-const userName = 'Alexander';
-const header = new Header({ isLoggedIn: true, name: userName, color: 'white' });
-console.log(apiKey, days, lang);
+const showError = new ShowError();
 
-header.render();
+const loginForm = new Form(
+  document.querySelector('#signin-popup'),
+  '#signup-popup',
+  mainApi.signin.bind(mainApi),
+  mainApi.getUserData.bind(mainApi),
+  showError,
+);
 
-const mainApi = new MainApi('https://www.api.inscientia.ru');
-const newsApi = new NewsApi(apiKey, days, lang);
-const newsCardList = new NewsCardList(newsApi.getNews.bind(newsApi));
-newsCardList.search('Химия');
+const signupForm = new Form(
+  document.querySelector('#signup-popup'),
+  '#signin-popup',
+  mainApi.signup.bind(mainApi),
+  mainApi.getUserData.bind(mainApi),
+  showError,
+);
 
-newsCardList.renderResults({
-  source: 'Popmech.ru',
-  title: 'Физики нашли в океане новый тип волн',
-  date: 'Wed Feb 12 2020 13:53:00 GMT+0300 (Москва, стандартное время) {}',
-  text: 'Сотрудники кафедры физики моря и вод суши физического факультета МГУ совместно с коллегами из Японского агентства морских и наземных исследований и технологий (JAMSTEC) и Университета Кагавы (Япония) обнаружили и детально исследовали эффект генерации гравитац…',
-  image: 'https://images11.popmeh.ru/upload/img_cache/b0d/b0d4da17b309fcfa18121454ba7acd8a_ce_2240x1176x0x112_fitted_1260x700.jpg',
-  link: 'https://www.popmech.ru/science/news-547824-fiziki-nashli-v-okeane-novyy-tip-voln/',
-  keyword: 'МГУ',
-});
+const regComplete = new Form(
+  document.querySelector('#successed-reg'),
+  '#signin-popup',
+  null,
+  null,
+  showError,
+);
 
-// Получение новостей с сервера
-/* const selectedNews = newsApi.getNews('Химия');
-console.log('статьи 3', selectedNews); */
+const newsApi = new NewsApi('4fd67e008f0240d980dfe1d6ff26a56e', 7, 'ru');
 
-/* mainApi.signup({
-  name: 'Чубакка',
-  email: 'chui@somewhere.com',
-  password: 'grrrrhhhh',
-}); */
+/* Проверка наличия актуальной куки для авторизации и получение данных пользователя  */
+let userData = { name: '' };
+mainApi.getUserData()
+  .then((data) => { console.log('получение данных пользователя'); userData = data; })
+  .catch((err) => {
+    this.showError.show(err.message);
+  });
+console.log('Данные пользователя', userData);
+userName.textContent = `${userData.name} ->`;
+
+if (userData.name) {
+  headerMenu.classList.add('header__menu_logged-in');
+  authorize.removeEventListener('click', () => { loginForm.open(); });
+} else {
+  console.log('signin opening');
+  authorize.addEventListener('click', () => { loginForm.open(); });
+}
+
+const newsRender = new NewsRender(
+  newsApi.getNews.bind(newsApi),
+  mainApi.createArticle.bind(mainApi),
+  mainApi.removeArticle.bind(mainApi),
+  showError,
+  params,
+);

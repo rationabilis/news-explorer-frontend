@@ -23,17 +23,17 @@ export default class NewsApi {
       })
       .then((data) => {
         const newsArray = [];
-        for (let i = 0; i < data.articles.length; i += 1) {
+        data.articles.forEach((news) => {
           newsArray.push({
-            source: data.articles[i].source.name,
-            title: data.articles[i].title,
-            date: new Date(Date.parse(data.articles[i].publishedAt)),
-            text: data.articles[i].description,
-            image: data.articles[i].urlToImage,
-            link: data.articles[i].url,
+            source: news.source.name,
+            title: news.title,
+            date: new Date(Date.parse(news.publishedAt)),
+            text: news.description,
+            image: news.urlToImage,
+            link: news.url,
             keyword: request,
           });
-        }
+        });
         return newsArray;
       })
       .catch((err) => {

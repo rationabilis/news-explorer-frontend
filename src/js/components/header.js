@@ -10,8 +10,8 @@ props = {isLoggedIn: true, userName: 'Alexander', color: 'white'}
 
 export default class Header {
   constructor(props) {
-    this.isLoggedIn = props.isLoggedIn;
-    this.userName = props.name;
+    this._isLoggedIn = false;
+    this._userName = 'Авторизоваться';
     this.color = props.color;
   }
 

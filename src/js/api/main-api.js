@@ -15,19 +15,22 @@ export default class MainApi {
   }
 
   signup(userData) {
+    console.log(JSON.stringify(userData), `${this.mainUrl}/signup`);
     return fetch(`${this.mainUrl}/signup`,
       {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        mode: 'cors',
-        credentials: 'include',
+        /* mode: 'cors', */
+/*         credentials: 'include', */
         body: JSON.stringify(userData),
       })
-      .then((res) => res.json())
       .then((res) => {
-        console.log(res.json());
+        if (!res.ok) {
+          throw new Error(res.status);
+        }
+        return res.json();
       })
       .catch((err) => {
         throw new Error(err.message);
@@ -41,11 +44,12 @@ export default class MainApi {
         headers: {
           'Content-Type': 'application/json',
         },
-        mode: 'cors',
-        credentials: 'include',
+        /* mode: 'cors', */
+        /* credentials: 'include', */
         body: JSON.stringify(userData),
       })
       .then((res) => {
+        console.log('ответ входа', res);
         if (!res.ok) throw new Error(`Ошибка входа ${res.status}`);
         return res.json();
       })
@@ -123,6 +127,26 @@ export default class MainApi {
       })
       .catch((err) => {
         throw new Error(err.message);
+      });
+  }
+
+
+  logout() {
+    return fetch(this._logout,
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        mode: 'cors',
+        credentials: 'include',
+      })
+      .then((res) => {
+        if (!res.ok) throw new Error(`Ошибка выхода: ${res.status}`);
+        return res.json();
+      })
+      .catch((e) => {
+        throw new Error(e.message);
       });
   }
 }

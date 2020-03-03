@@ -6,16 +6,23 @@
   width: 2.22rem;
   height: 2.22rem;
   border: none;
-
   border-radius: 8px;
+}
+
+.icon:hover ~ .icon__message {
+  opacity: 1;
 }
 
 .icon:hover {
   background-image: url('../../images/hover-icon.png');
 }
 
-.icon_marked{
+.icon.icon_marked{
   background-image: url('../../images/marked-icon.png');
+}
+
+.icon.icon_marked:hover ~ .icon__message {
+  opacity: 0;
 }
 
 @media (max-width: 1220px) {

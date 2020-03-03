@@ -6,7 +6,7 @@ _validateForm — валидирует всю форму;
 _clear — вспомогательный метод, очищает поля формы;
 _getInfo — вспомогательный метод, возвращает данные формы. */
 
-export default class Form {
+/* export default class Form {
   constructor() {
 
   }
@@ -20,4 +20,124 @@ export default class Form {
   _clear() {}
 
   _getInfo() {}
+}
+ */
+
+export default class Form {
+  constructor(domElement, goTo, handler, getUser, showError) {
+    this.domElement = domElement;
+    this.closeButton = domElement.querySelector('.popup__close');
+    this.closeButton.addEventListener('click', () => { this.close(); });
+    this.form = domElement.querySelector('.popup__form');
+    this._pathMarker = goTo;
+    this.goTo = document.querySelector(goTo);
+    this.nextStep = domElement.querySelector('.popup__under-button');
+    this.nextStep.addEventListener('click', () => { this.openNext(); });
+    this.serverHandler = handler;
+    this.getUser = getUser;
+    this.showError = showError;
+    this.submitButton = '';
+    this._inputs = [];
+
+    Array.from(this.form.elements)
+      .forEach((item) => {
+        if (item.nodeName == 'BUTTON') {
+          this.submitButton = item;
+        }
+        if (item.nodeName == 'INPUT') {
+          this._inputs.push(item);
+          item.addEventListener('input', () => this.inputHandler());
+        }
+      });
+      console.log(this.form.elements);
+    this._updateView = new Event('updateView', { bubbles: true });
+    this._updateMenu = new Event('updateMenu', { bubbles: true });
+    this.form.addEventListener('submit', (event) => this.submitForm(event));
+  }
+
+  disableSubmitButton() {
+    this.submitButton.setAttribute('disabled', true);
+  }
+
+  enableSubmitButton() {
+    this.submitButton.removeAttribute('disabled', true);
+  }
+
+  disableInputs() {
+    this._inputs.forEach((item) => item.setAttribute('disabled', true));
+  }
+
+  enableInputs() {
+    this._inputs.forEach((item) => item.removeAttribute('disabled', true));
+  }
+
+
+
+  // eslint-disable-next-line class-methods-use-this
+  isValid(elementToCheck) {
+    const errorElement = document.querySelector(`#error-${elementToCheck.id}`);
+    if (!elementToCheck.validity.valid) {
+      errorElement.classList.remove('invisible');
+      return false;
+    }
+    errorElement.classList.add('invisible');
+    return true;
+  }
+
+  submitForm(event) {
+    const userToSend = {};
+    event.preventDefault();
+    this.disableSubmitButton();
+    this.disableInputs();
+    this._inputs.forEach((item) => {
+      userToSend[item.name === 'user-name' ? 'name' : item.name] = item.value;
+    });
+    console.log(userToSend);
+    this.serverHandler(userToSend)
+      .then(() => {
+        if (this._pathMarker === '#signup-popup') {
+          this.close();
+          this.enableSubmitButton();
+          this.enableInputs();
+          this.getUser()
+            .then((res) => {
+              localStorage && localStorage.setItem('user', res);
+              document.dispatchEvent(this._updateView);
+              document.dispatchEvent(this._updateMenu);
+            })
+            .catch((err) => this.showError.show(err.message));
+        }
+        if (this._pathMarker === '#signin-popup') {
+          this.goTo = document.querySelector('#successed-reg');
+          this.openNext();
+          this.goTo = document.querySelector(this._pathMarker);
+          this.enableSubmitButton();
+          this.enableInputs();
+        }
+      })
+      .catch((err) => {
+        if (err.message === '400' || err.message === '401') {
+          this.form.querySelector(`#${this.form.name}-fatal`).classList.remove('invisible');
+        } else {
+          this.showError.show(err.message);
+        }
+        this.enableSubmitButton();
+        this.enableInputs();
+      });
+  }
+
+  open() {
+    this.domElement.classList.remove('invisible');
+    /*     document.querySelector('#scroll').classList.add('body-noscroll'); */
+  }
+
+  close() {
+    /*     document.querySelector('#scroll').classList.remove('body-noscroll'); */
+    this.domElement.classList.add('invisible');
+  }
+
+  openNext() {
+    this.domElement.classList.add('invisible');
+    this.goTo.classList.remove('invisible');
+  }
 }

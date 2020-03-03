@@ -7,12 +7,15 @@
 
 .card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   width: 22.22rem;
   height: 32rem;
   margin: 0 .89rem .89rem 0;
   cursor: pointer;
   background-color: white;
   border-radius: .89rem;
+  text-decoration: none;
 }
 
 @media (max-width: 1220px) {

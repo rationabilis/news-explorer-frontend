@@ -1,0 +1,55 @@
+const params = {
+  results: {
+    showStep: 3,
+    showMore: { node: '.search-results__button', hide: 'invisible' },
+    resultsContainer: '.cards',
+    newsForm: '.search__form',
+    searchInput: '.search__input',
+    searchSubmit: '.search__button',
+    preloader: { node: '.searching', hide: 'invisible' },
+    notFound: { node: '.no-results', hide: 'invisible' },
+    serverError: { node: '#preloader-server-error', hide: 'invisible' },
+    resultsSection: { node: '.search-results', hide: 'invisible' },
+  },
+  slider: {
+    node: '.slider',
+    commitDate: '.slider__commit-date',
+    commitImage: '.slider__commit-image',
+    commitName: '.slider__commit-name',
+    commitEmail: '.slider__commit-email',
+    commitText: '.slider__commit-text',
+    template: '#commit-sample',
+    swiperWrap: '.swiper-wrapper',
+  },
+  card: {
+    node: '.card',
+    img: '.card__image',
+    date: '.card__date',
+    title: '.card__title',
+    text: '.card__text',
+    src: '.card__source',
+    warning: '.card__warning',
+    keyword: '.card__keyword',
+    icon: {
+      node: '.icon',
+      marked: 'icon_marked',
+      bin: 'delete_icon',
+    },
+  },
+  cardsArray: {
+    cardsArrayContainer: '.storage',
+    articlesCount: '.articles-count',
+    articlesHeader: '.saved-title__header',
+    words: {
+      first: '.first-word',
+      second: '.second-word',
+      more: '.and-more',
+      tail: '.other',
+    },
+  },
+  cardPrototype: '#card-template',
+  month: ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа',
+    'сентября', 'октября', 'ноября', 'декабря'],
+};
+
+export default params;

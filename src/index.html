@@ -20,7 +20,7 @@
         <nav class="header__menu"> <!--  После логина добавить класс header__menu_logged-in -->
           <a class="link link_header" href="./index.html">Главная</a><!-- Если удалить все index.html, то в режиме dev ссылки работают, а в режиме build - нет. -->
           <a class="link link_header" href="./about/index.html">О проекте</a>
-          <a class="link link_header" href="./savednews/index.html">Авторизоваться</a>
+          <a class="link link_header" id="authorize">Авторизоваться</a>
           <a class="link link_header" href="./savednews/index.html">Сохранённые статьи</a>
           <a class="link link_header" href="./index.html" id="userName"></a>
         </nav>
@@ -31,7 +31,7 @@
         <p class="search__subtitle">Находите самые свежие статьи на любую тему и сохраняйте в своём личном кабинете.</p>
 
         <form class="search__form" name="search">
-            <input id="keyword" type="text" name="keyword" minlength="8" maxlength="30" class="search__input" placeholder="Введите тему новости" required>
+            <input id="keyword" type="text" name="keyword" minlength="3" maxlength="30" class="search__input" placeholder="Введите тему новости" required>
             <button class="search__button">Искать</button>
         </form>
       </div>
@@ -48,12 +48,12 @@
         <p class="no-results__text">К сожалению по вашему запросу ничего не найдено.</p>
       </section>
 
-    <section class="search-results">
+    <section class="search-results invisible">
         <h2 class="search-results__title">Результаты поиска</h2>
         <div class="cards">
 
         <template id="card-template">
-          <div class="card">
+          <a href="" class="card" target="_blank">
             <img src="" class="card__image" alt="">
             <button class="icon"></button>
 
@@ -62,7 +62,7 @@
             <p class="card__text"></p>
             <h5 class="card__source"></h5>
 
-          </div>
+          </a>
         </template>
 
         </div>
@@ -99,75 +99,75 @@
       </div>
     </footer>
 
-    <div class="popup invisible">
-        <div class="popup__content">
+    <div class="popup invisible" id="signin-popup">
+      <div class="popup__content">
 
-            <img src="./images/close-button.png" alt="" class="popup__close">
-            <h3 class="popup__title">Вход</h3>
+        <form class="popup__form" name="signin-form">
+          <img src="./images/close-button.png" alt="" class="popup__close">
+          <h3 class="popup__title">Вход</h3>
 
-            <form class="popup__form" name="login">
-                <p class="popup__field">Email</p>
-                <input type="email" name="email" class="popup__input" placeholder="Введите почту" required>
-                <span class="error-message">Неправильный формат email</span>
+          <p class="popup__field">Email</p>
+          <input type="email" name="email" class="popup__input" placeholder="Введите почту" required>
+          <span class="error-message invisible">Неправильный формат email</span>
 
-                <p class="popup__field">Пароль</p>
-                <input type="password" name="password" minlength="8" class="popup__input" placeholder="Введите пароль" required>
-                <span class="error-message">Не менее 8 символов</span>
-                <button class="button popup__button" disabled>Войти</button>
+          <p class="popup__field">Пароль</p>
+          <input type="password" name="password" minlength="8" class="popup__input" placeholder="Введите пароль" required>
+          <span class="error-message invisible">Не менее 8 символов</span>
 
-            </form>
+          <button class="button popup__button" type="submit">Войти</button>
+          <span class="popup__under-button">или Зарегистрироваться</span>
+        </form>
+      </div>
+    </div>
 
-            <a class="popup__under-button" href="./">или Зарегистрироваться</a>
-          </div>
-        </div>
+    <div class="popup invisible" id="signup-popup">
+      <div class="popup__content">
 
-    <div class="popup invisible">
-        <div class="popup__content">
-
+        <form class="popup__form" name="signup-form">
             <img src="./images/close-button.png" alt="" class="popup__close">
             <h3 class="popup__title">Регистрация</h3>
 
-            <form class="popup__form" name="login">
-                <p class="popup__field">Email</p>
-                <input type="email" name="email" class="popup__input" placeholder="Введите почту" required>
-                <span class="error-message">Неправильный формат email</span>
+            <p class="popup__field">Email</p>
+            <input type="email" name="email" class="popup__input" placeholder="Введите почту" required>
+            <span class="error-message invisible">Неправильный формат email</span>
 
-                <p class="popup__field">Пароль</p>
-                <input type="password" name="password" minlength="8" maxlength="30" class="popup__input" placeholder="Введите пароль" required>
-                <span class="error-message">Не менее 8 символов</span>
+            <p class="popup__field">Пароль</p>
+            <input type="password" name="password" minlength="8" maxlength="30" class="popup__input" placeholder="Введите пароль" required>
+            <span class="error-message invisible">Не менее 8 символов</span>
 
-                <p class="popup__field">Имя</p>
-                <input type="text" name="name" minlength="2" maxlength="30" class="popup__input" placeholder="Введите своё имя" required>
-                <span class="error-message">От 2 до 30 символов</span>
+            <p class="popup__field">Имя</p>
+            <input type="text" name="user-name" minlength="2" maxlength="30" class="popup__input" placeholder="Введите своё имя" required>
+            <span class="error-message invisible">От 2 до 30 символов</span>
 
-                <p class="error-message error-message_reg">Такой пользователь уже есть</p>
-                <button class="button popup__button" disabled>Зарегистрироваться</button>
+            <p class="error-message signup-form-error">Такой пользователь уже есть</p>
 
-            </form>
+            <button class="button popup__button" type="submit">Зарегистрироваться</button>
+            <span class="popup__under-button">или Войти</span>
 
-            <a class="popup__under-button" href="./">или Войти</a>
-          </div>
-        </div>
+        </form>
+      </div>
+    </div>
 
-        <div class="popup invisible">
-            <div class="popup__content">
+    <div class="popup invisible" id="successed-reg">
+      <div class="popup__content">
+        <form class="popup__form" name="successed-form">
+            <img src="./images/close-button.png" alt="" class="popup__close">
+            <h3 class="popup__title">Пользователь успешно зарегистрирован</h3>
 
-                <img src="./images/close-button.png" alt="" class="popup__close">
-                <h3 class="popup__title">Пользователь успешно зарегистрирован</h3>
+            <span class="popup__under-button">Выполнить вход</span>
+        </form>
+      </div>
+    </div>
 
-                <a class="popup__success" href="./">Выполнить вход</a>
-              </div>
-          </div>
-
-          <div class="popup invisible">
-                <nav class="mobile-menu">
-                  <img src="./images/close-button.png" alt="" class="mobile-menu__close">
-                  <a class="mobile-menu__link" href="./index.html">Главная</a>
-                  <a class="mobile-menu__link" href="./about/index.html">О проекте</a>
-                  <a class="mobile-menu__link" href="./savednews/index.html">Сохранённые статьи</a>
-                  <a class="mobile-menu__link" href="./index.html">Грета&#160;&#160;[→</a>
-                </nav>
-          </div>
+    <div class="popup invisible" id="mobile">
+      <nav class="mobile-menu">
+        <img src="./images/close-button.png" alt="" class="mobile-menu__close">
+        <a class="mobile-menu__link" href="./index.html">Главная</a>
+        <a class="mobile-menu__link" href="./about/index.html">О проекте</a>
+        <a class="mobile-menu__link" href="./savednews/index.html">Сохранённые статьи</a>
+        <a class="mobile-menu__link" href="./index.html">Грета&#160;&#160;[→</a>
+      </nav>
+    </div>
 
   </div>
   <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>

@@ -6,15 +6,26 @@ open — открывает попап;
 close — закрывает попап. */
 
 export default class Popup {
-  constructor(popupContent) {
-    this.popupContainer = document.querySelector('.popup');
-    this.popupContainer.innerHTML = popupContent;
-    this.open();
+  constructor(popupContent, nextStep) {
 
-    const popupCloseButton = document.querySelector('.popup__close');
+    const popupContainer = document.querySelector('.popup');
+    popupContainer.innerHTML = popupContent;
+    console.log(popupContainer);
+    this.nextStep = nextStep;
+
+    const popupSwitchButton = document.querySelector('.popup__under-button');
+    console.log(popupSwitchButton);
+/*     popupSwitchButton.addEventListener('click', function () {
+      this.close(); */
+/*       nextStep.open(); */
+   /*  }); */
+
+
+    this.nextStep = nextStep;
+    const popupCloseButton = popupContainer.querySelector('.popup__close');
     popupCloseButton.addEventListener('click', (event) => this.close());
 
-    this.popupButton = document.querySelector('.popup__button');
+    this.popupButton = popupContainer.querySelector('.popup__button');
   }
 
 
@@ -23,12 +34,13 @@ export default class Popup {
   }
 
   open() {
-    this.popupContainer.removeAttribute('invisible', true);
+    console.log('open');
+    this.popupContainer.classList.remove('.invisible');
   }
 
   close() {
     this.popupContainer.addAttribute('invisible', true);
-    clearContent();
+    this.clearContent();
   }
 
   enablePopupButton() {

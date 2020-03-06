@@ -1,5 +1,5 @@
 const params = {
-  results: {
+    results: {
     showStep: 3,
     showMore: { node: '.search-results__button', hide: 'invisible' },
     resultsContainer: '.cards',

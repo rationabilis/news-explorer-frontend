@@ -42,7 +42,7 @@ const headerMenu = document.querySelector('.header__menu');
 const authorize = document.querySelector('#authorize');
 
 const userName = document.querySelector('#userName');
-const mainUrl = 'https://www.api.inscientia.ru';
+const mainUrl = 'http://localhost:3000';
 const mainApi = new MainApi(mainUrl);
 
 const showError = new ShowError();
@@ -74,22 +74,47 @@ const regComplete = new Form(
 const newsApi = new NewsApi('4fd67e008f0240d980dfe1d6ff26a56e', 7, 'ru');
 
 /* Проверка наличия актуальной куки для авторизации и получение данных пользователя  */
-let userData = { name: '' };
+let userData = { };
+console.log('получение данных пользователя');
 mainApi.getUserData()
-  .then((data) => { console.log('получение данных пользователя'); userData = data; })
+  .then((data) => {
+    userData = data;
+    if (userData.user) {
+      console.log('Данные пользователя', userData);
+      userName.textContent = `${userData.user} ->`;
+      headerMenu.classList.add('header__menu_logged-in');
+      authorize.removeEventListener('click', () => { loginForm.open(); });
+      userName.addEventListener('click', () => {
+        console.log('Выход');
+        mainApi.logout();
+        headerMenu.classList.remove('header__menu_logged-in');
+        authorize.addEventListener('click', () => {
+          console.log('1');
+          loginForm.open();
+        });
+      });
+    } else {
+      console.log('Надо авторизоваться');
+      userName.textContent = '->';
+      headerMenu.classList.remove('header__menu_logged-in');
+      authorize.addEventListener('click', () => { loginForm.open(); });
+      userName.removeEventListener('click', () => {
+        mainApi.logout()
+          .then(location.reload());
+      });
+    }
+  })
   .catch((err) => {
-    this.showError.show(err.message);
+    console.log('ошибка начальной авторизации');
+    /*    this.showError.show(err.message); */
+    headerMenu.classList.remove('header__menu_logged-in');
+    authorize.addEventListener('click', () => { loginForm.open(); });
+    userName.removeEventListener('click', () => {
+      mainApi.logout();
+      location.reload();
+    });
   });
-console.log('Данные пользователя', userData);
-userName.textContent = `${userData.name} ->`;
 
-if (userData.name) {
-  headerMenu.classList.add('header__menu_logged-in');
-  authorize.removeEventListener('click', () => { loginForm.open(); });
-} else {
-  console.log('signin opening');
-  authorize.addEventListener('click', () => { loginForm.open(); });
-}
 
 const newsRender = new NewsRender(
   newsApi.getNews.bind(newsApi),

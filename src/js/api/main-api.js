@@ -15,18 +15,18 @@ export default class MainApi {
   }
 
   signup(userData) {
-    console.log(JSON.stringify(userData), `${this.mainUrl}/signup`);
     return fetch(`${this.mainUrl}/signup`,
       {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        /* mode: 'cors', */
-/*         credentials: 'include', */
+        mode: 'cors',
+        credentials: 'include',
         body: JSON.stringify(userData),
       })
       .then((res) => {
+        console.log('ответ регистрации', res);
         if (!res.ok) {
           throw new Error(res.status);
         }
@@ -44,14 +44,18 @@ export default class MainApi {
         headers: {
           'Content-Type': 'application/json',
         },
-        /* mode: 'cors', */
-        /* credentials: 'include', */
+        mode: 'cors',
+        credentials: 'include',
         body: JSON.stringify(userData),
       })
       .then((res) => {
         console.log('ответ входа', res);
         if (!res.ok) throw new Error(`Ошибка входа ${res.status}`);
         return res.json();
+      })
+      .then((data) => {
+        console.log('пришли данные', data);
+        localStorage.setItem('token', data.token);
       })
       .catch((err) => {
         throw new Error(err.message);
@@ -60,12 +64,18 @@ export default class MainApi {
 
   getUserData() {
     return fetch(`${this.mainUrl}/users/me`,
-      { credentials: 'include' })
+      {
+        headers: {
+          authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+        mode: 'cors',
+        credentials: 'include',
+      })
       .then((res) => {
         if (!res.ok) throw new Error(`Не удалось получить данные пользователя ${res.status}`);
         return res.json();
       })
-      .then((userInfo) => userInfo.user)
+      .then((userInfo) => userInfo)
       .catch((err) => {
         throw new Error(err.message);
       });
@@ -78,8 +88,8 @@ export default class MainApi {
         headers: {
           'Content-Type': 'application/json',
         },
-        mode: 'cors',
-        credentials: 'include',
+        /*         mode: 'cors',
+        credentials: 'include', */
       })
       .then((res) => {
         if (!res.ok) throw new Error(`Не удалось получить данные статей ${res.status}`);
@@ -97,8 +107,8 @@ export default class MainApi {
         headers: {
           'Content-Type': 'application/json',
         },
-        mode: 'cors',
-        credentials: 'include',
+        /*         mode: 'cors',
+        credentials: 'include', */
         body: JSON.stringify(articleData),
       })
       .then((res) => {
@@ -118,8 +128,8 @@ export default class MainApi {
         headers: {
           'Content-Type': 'application/json',
         },
-        mode: 'cors',
-        credentials: 'include',
+        /*         mode: 'cors',
+        credentials: 'include', */
       })
       .then((res) => {
         if (!res.ok) throw new Error(`Не удалось удалить статью ${res.status}`);
@@ -132,7 +142,7 @@ export default class MainApi {
 
 
   logout() {
-    return fetch(this._logout,
+    return fetch(`${this.mainUrl}/logout`,
       {
         method: 'POST',
         headers: {
@@ -144,6 +154,10 @@ export default class MainApi {
       .then((res) => {
         if (!res.ok) throw new Error(`Ошибка выхода: ${res.status}`);
         return res.json();
+      })
+      .then((data) => {
+        console.log(data);
+        localStorage && localStorage.clear();
       })
       .catch((e) => {
         throw new Error(e.message);

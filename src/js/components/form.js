@@ -26,6 +26,7 @@ _getInfo — вспомогательный метод, возвращает д�
 export default class Form {
   constructor(domElement, goTo, handler, getUser, showError) {
     this.domElement = domElement;
+    this.headerMenu = document.querySelector('.header__menu');
     this.closeButton = domElement.querySelector('.popup__close');
     this.closeButton.addEventListener('click', () => { this.close(); });
     this.form = domElement.querySelector('.popup__form');
@@ -36,10 +37,11 @@ export default class Form {
     this.serverHandler = handler;
     this.getUser = getUser;
     this.showError = showError;
-    this.submitButton = '';
+    this.submitButton = '.popup__button';
     this._inputs = [];
 
     Array.from(this.form.elements)
+
       .forEach((item) => {
         if (item.nodeName == 'BUTTON') {
           this.submitButton = item;
@@ -49,7 +51,7 @@ export default class Form {
           item.addEventListener('input', () => this.inputHandler());
         }
       });
-      console.log(this.form.elements);
+
     this._updateView = new Event('updateView', { bubbles: true });
     this._updateMenu = new Event('updateMenu', { bubbles: true });
     this.form.addEventListener('submit', (event) => this.submitForm(event));
@@ -71,7 +73,18 @@ export default class Form {
     this._inputs.forEach((item) => item.removeAttribute('disabled', true));
   }
 
-
+  inputHandler() {
+    this.form.querySelector('.signup-form-error').classList.add('invisible');
+    let validator = true;
+    this._inputs.forEach((item) => {
+      if (!this.isValid(item)) { validator = false; }
+    });
+    if (validator) {
+      this.enableSubmitButton();
+    } else {
+      this.disableSubmitButton();
+    }
+  }
 
   // eslint-disable-next-line class-methods-use-this
   isValid(elementToCheck) {
@@ -102,6 +115,7 @@ export default class Form {
           this.getUser()
             .then((res) => {
               localStorage && localStorage.setItem('user', res);
+              this.headerMenu.classList.add('header__menu_logged-in');
               document.dispatchEvent(this._updateView);
               document.dispatchEvent(this._updateMenu);
             })

@@ -1,6 +1,6 @@
 const constants = {
   mainApiConfig: {
-    mainUrl: 'http://localhost:3000',
+    mainUrl: 'www.api.inscientia.ru', /* 'http://localhost:3000', */
   },
   newsApiConfig: {
     days: 7,

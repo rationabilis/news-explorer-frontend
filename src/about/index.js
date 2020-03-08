@@ -1,3 +1,6 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-undef */
 import './style.css';
 
 import '../images/close-button.png';
@@ -45,8 +48,7 @@ const swiper = new Swiper('.swiper-container', {
   },
 });
 
-const mainUrl = 'http://localhost:3000';
-const mainApi = new MainApi(mainUrl);
+const mainApi = new MainApi(constants.mainApiConfig.mainUrl);
 const authorize = document.querySelector('#authorize');
 const userName = document.querySelector('#userName');
 const headerMenu = document.querySelector('.header__menu');
@@ -79,17 +81,16 @@ const regComplete = new Form(
 
 /* Проверка наличия актуальной куки для авторизации и получение данных пользователя  */
 let userData = { };
-console.log('получение данных пользователя');
+
 mainApi.getUserData()
   .then((data) => {
     userData = data;
     if (userData.user) {
-      console.log('Данные пользователя', userData);
       userName.textContent = `${userData.user} ->`;
+      localStorage.setItem('user', userData.user);
       headerMenu.classList.add('header__menu_logged-in');
       authorize.removeEventListener('click', () => { loginForm.open(); });
       userName.addEventListener('click', () => {
-        console.log('Выход');
         mainApi.logout();
         headerMenu.classList.remove('header__menu_logged-in');
         authorize.addEventListener('click', () => {
@@ -97,7 +98,6 @@ mainApi.getUserData()
         });
       });
     } else {
-      console.log('Надо авторизоваться');
       userName.textContent = '->';
       headerMenu.classList.remove('header__menu_logged-in');
       authorize.addEventListener('click', () => { loginForm.open(); });
@@ -108,7 +108,6 @@ mainApi.getUserData()
     }
   })
   .catch((err) => {
-    console.log('ошибка начальной авторизации');
     this.showError.show(err.message);
     headerMenu.classList.remove('header__menu_logged-in');
     authorize.addEventListener('click', () => { loginForm.open(); });

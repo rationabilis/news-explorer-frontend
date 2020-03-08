@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable class-methods-use-this */
 export default class CardsArray {
   constructor(getArticles, deleteArticle, {
@@ -13,7 +14,7 @@ export default class CardsArray {
     this.cardPrototype = document.querySelector(cardPrototype).content;
     this._articlesHeader = document.querySelector(this.cardsArray.articlesHeader);
     this._cardsArrayContainer = document.querySelector(this.cardsArray.cardsArrayContainer);
-    this._savedArticles = document.querySelector(this.cardsArray.savedArticles);
+    this._savedNumber = document.querySelector(this.cardsArray.savedNumber);
     this._cardsArrayContainer.addEventListener('click', (event) => this.articlesHandler(event));
     this.render();
   }
@@ -35,7 +36,6 @@ export default class CardsArray {
   }
 
   createCard(data) {
-
     const container = this.cardPrototype.cloneNode(true);
     container.querySelector(this.card.text).textContent = data.text;
     container.querySelector(this.card.src).textContent = data.source;
@@ -54,7 +54,6 @@ export default class CardsArray {
       .then((res) => {
         const articlesArray = res.data;
         articlesArray.forEach((item) => {
-          console.log(item);
           this._stats[item._id] = item.keyword;
           // eslint-disable-next-line no-param-reassign
           item.date = new Date(Date.parse(item.date));
@@ -105,7 +104,7 @@ export default class CardsArray {
   }
 
   keywordsStats() {
-    this._savedArticles.textContent = `${Array.from(Object.keys(this._stats)).length} сохраненных статей`;
+    this._savedNumber.textContent = `${this.userName()}, у Вас ${Array.from(Object.keys(this._stats)).length} сохраненных статей`;
     const keywords = this.keywordsNumber();
 
     document.querySelector(this.cardsArray.words.first).textContent = keywords.keywordsTotal >= 1 ? keywords.popular.shift() : '';
@@ -116,7 +115,7 @@ export default class CardsArray {
       tagLine = keywords.keywordsTotal <= 1 ? '' : `, ${keywords.popular.shift()}`;
     }
     document.querySelector(this.cardsArray.words.second).textContent = tagLine;
-    document.querySelector(this.cardsArray.words.tail).style.display = keywords.keywordsTotal > 3 ? 'auto' : 'none';
+    document.querySelector(this.cardsArray.words.rest).style.display = keywords.keywordsTotal > 3 ? 'auto' : 'none';
     document.querySelector(this.cardsArray.words.more).textContent = keywords.keywordsTotal - 2;
   }
 }

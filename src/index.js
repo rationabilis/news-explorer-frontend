@@ -1,3 +1,6 @@
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 import './style.css';
 import './images/favicon.png';
 import './images/github_logo.png';
@@ -43,8 +46,7 @@ const headerMenu = document.querySelector('.header__menu');
 const authorize = document.querySelector('#authorize');
 
 const userName = document.querySelector('#userName');
-const mainUrl = 'http://localhost:3000';
-const mainApi = new MainApi(mainUrl);
+const mainApi = new MainApi(constants.mainApiConfig.mainUrl);
 
 const showError = new ShowError();
 
@@ -80,21 +82,19 @@ const newsApi = new NewsApi(
 
 /* Проверка наличия актуальной куки для авторизации и получение данных пользователя  */
 let userData = { };
-console.log('получение данных пользователя');
+
 mainApi.getUserData()
   .then((data) => {
     userData = data;
     if (userData.user) {
-      console.log('Данные пользователя', userData);
       userName.textContent = `${userData.user} ->`;
+      localStorage.setItem('user', userData.user);
       headerMenu.classList.add('header__menu_logged-in');
       authorize.removeEventListener('click', () => { loginForm.open(); });
       userName.addEventListener('click', () => {
-        console.log('Выход');
         mainApi.logout();
         headerMenu.classList.remove('header__menu_logged-in');
         authorize.addEventListener('click', () => {
-          console.log('1');
           loginForm.open();
         });
       });

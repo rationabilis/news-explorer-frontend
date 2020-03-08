@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable no-undef */
 export default class NewsRender {
   constructor(
     getNews, saveArticle, deleteArticle, showError,
@@ -8,7 +10,6 @@ export default class NewsRender {
     this._showMore = document.querySelector(results.showMore.node);
     this._preloader = document.querySelector(results.preloader.node);
     this._notFound = document.querySelector(results.notFound.node);
-    /* this._serverError = document.querySelector(results.serverError.node); */
     this._resultsSection = document.querySelector(results.resultsSection.node);
     this.cardPrototype = document.querySelector(cardPrototype).content;
     this._resultsContainer = document.querySelector(results.resultsContainer);
@@ -55,7 +56,6 @@ export default class NewsRender {
 
   cardHandler(event) {
     const iconClass = this.card.icon.node.slice(1, this.card.icon.node.length);
-    console.log('iconClass', iconClass);
     if (event.target.className.includes(iconClass)) {
       event.preventDefault();
       if (this._isLogged()) {

@@ -1,4 +1,7 @@
 const constants = {
+  mainApiConfig: {
+    mainUrl: 'http://localhost:3000',
+  },
   newsApiConfig: {
     days: 7,
     apiKey: '4fd67e008f0240d980dfe1d6ff26a56e',
@@ -45,13 +48,13 @@ const constants = {
   },
   cardsArray: {
     cardsArrayContainer: '.cards_saved',
-    savedArticles: '.saved-articles',
+    savedNumber: '.saved-number',
     articlesHeader: '.saved-articles__subtitle',
     words: {
       first: '.first-keyword',
       second: '.second-keyword',
       more: '.and-more',
-      tail: '.other',
+      rest: '.other',
     },
   },
   cardPrototype: '#card-template',

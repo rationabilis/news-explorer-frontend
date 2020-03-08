@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-undef */
 /* MainApi Отвечает за взаимодействие с написанным вами Node.js API.
 Конструктор этого класса принимает опции, необходимые для инициализации работы с API.
 Вот список обязательных методов:
@@ -26,7 +28,6 @@ export default class MainApi {
         body: JSON.stringify(userData),
       })
       .then((res) => {
-        console.log('ответ регистрации', res);
         if (!res.ok) {
           throw new Error(res.status);
         }
@@ -49,12 +50,10 @@ export default class MainApi {
         body: JSON.stringify(userData),
       })
       .then((res) => {
-        console.log('ответ входа', res);
         if (!res.ok) throw new Error(`Ошибка входа ${res.status}`);
         return res.json();
       })
       .then((data) => {
-        console.log('пришли данные', data);
         localStorage.setItem('token', data.token);
       })
       .catch((err) => {
@@ -158,12 +157,11 @@ export default class MainApi {
         if (!res.ok) throw new Error(`Ошибка выхода: ${res.status}`);
         return res.json();
       })
-      .then((data) => {
-        console.log(data);
+      .then(() => {
         localStorage && localStorage.clear();
       })
-      .catch((e) => {
-        throw new Error(e.message);
+      .catch((err) => {
+        throw new Error(err.message);
       });
   }
 }

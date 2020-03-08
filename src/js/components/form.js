@@ -1,3 +1,6 @@
+/* eslint-disable eqeqeq */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable no-undef */
 export default class Form {
   constructor(domElement, goTo, handler, getUser, showError) {
     this.domElement = domElement;
@@ -79,7 +82,6 @@ export default class Form {
     this._inputs.forEach((item) => {
       userToSend[item.name === 'user-name' ? 'name' : item.name] = item.value;
     });
-    console.log(userToSend);
     this.serverHandler(userToSend)
       .then(() => {
         if (this._pathMarker === '#signup-popup') {

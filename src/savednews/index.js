@@ -1,3 +1,7 @@
+/* eslint-disable no-new */
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 import './style.css';
 
 import '../images/close-button.png';
@@ -15,13 +19,10 @@ import ShowError from '../js/components/error';
 import MainApi from '../js/api/main-api';
 import CardsArray from '../js/components/cardsArray';
 
-
-
 const authorize = document.querySelector('#authorize');
 
 const userName = document.querySelector('#userName');
-const mainUrl = 'http://localhost:3000';
-const mainApi = new MainApi(mainUrl);
+const mainApi = new MainApi(constants.mainApiConfig.mainUrl);
 const headerMenu = document.querySelector('.header__menu');
 const showError = new ShowError();
 
@@ -57,6 +58,7 @@ mainApi.getUserData()
     userData = data;
     if (userData.user) {
       userName.textContent = `${userData.user} ->`;
+      localStorage.setItem('user', userData.user);
       headerMenu.classList.add('header__menu_logged-in');
       authorize.removeEventListener('click', () => { loginForm.open(); });
       userName.addEventListener('click', () => {
@@ -86,10 +88,7 @@ mainApi.getUserData()
     });
   });
 
-
-console.log('Пользователь:', Boolean(localStorage.getItem('user')));
-
-const cardsArray = new CardsArray(
+new CardsArray(
   mainApi.getArticles.bind(mainApi),
   mainApi.removeArticle.bind(mainApi),
   constants,

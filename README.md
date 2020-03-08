@@ -1,4 +1,4 @@
-Яндекс практикум. Когорта 1. Демин Александр. Дипломный проект. Фронтенд. Версия v1.2.0.
+Яндекс практикум. Когорта 1. Демин Александр. Дипломный проект. Фронтенд. Версия v2.0.0.
 
 =====================================================================
 
@@ -21,4 +21,5 @@ https://github.com/rationabilis/news-explorer-frontend
 14. Для публикации - npm run deploy
 15. Для публикации на Github pages - npm run gh-pages
 16. Фронтенд расположен на inscientia.ru и www.inscientia.ru
-16. Бэкенд расположен на api.inscientia.ru и www.api.inscientia.ru
+17. Бэкенд расположен на api.inscientia.ru и www.api.inscientia.ru
+18. Добавлены JS модули

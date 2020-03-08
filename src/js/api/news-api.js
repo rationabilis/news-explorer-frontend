@@ -15,7 +15,6 @@ export default class NewsApi {
     const to = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
     const from = `${interval.getFullYear()}-${interval.getMonth() + 1}-${interval.getDate()}`;
     const newsUrl = `https://newsapi.org/v2/everything?sortBy=popularity&apiKey=${this.apiKey}&language=${this.lang}&pageSize=100&q=${request}&from=${from}&to=${to}`;
-    console.log(now, interval, to, from, newsUrl);
     return fetch(newsUrl)
       .then((res) => {
         if (!res.ok) throw new Error('Невозможно выполнить запрос');

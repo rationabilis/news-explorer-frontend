@@ -15,6 +15,13 @@
 @import url('../blocks/footer/footer.css');
 @import url('../blocks/about-project/about-project.css');
 
+@import url('../blocks/popup/popup.css');
+@import url('../blocks/error-message/error-message.css');
+@import url('../blocks/button/button.css');
+@import url('../blocks/invisible/invisible.css');
+@import url('../blocks/footer/footer.css');
+@import url('../blocks/mobile-menu/mobile_menu.css');
+
 @import url('https://rsms.me/inter/inter.css');
 html { font-family: 'Inter', sans-serif; }
 @supports (font-variation-settings: normal) {

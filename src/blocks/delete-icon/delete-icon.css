@@ -16,7 +16,7 @@
 }
 
 .delete-icon:hover ~ .delete-icon__message {
-  opacity: 0;
+  opacity: 1;
 }
 
 @media (max-width: 1220px) {

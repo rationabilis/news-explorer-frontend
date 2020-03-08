@@ -1,3 +1,5 @@
+@import url('./__message/__message.css');
+
 .icon {
   background-image: url('../../images/normal-icon.png');
   position: absolute;
@@ -9,10 +11,6 @@
   border-radius: 8px;
 }
 
-.icon:hover ~ .icon__message {
-  opacity: 1;
-}
-
 .icon:hover {
   background-image: url('../../images/hover-icon.png');
 }
@@ -21,10 +19,9 @@
   background-image: url('../../images/marked-icon.png');
 }
 
-.icon.icon_marked:hover ~ .icon__message {
-  opacity: 0;
+.icon:hover ~ .icon__message {
+  opacity: 1;
 }
-
 @media (max-width: 1220px) {
   .icon {
     position: absolute;

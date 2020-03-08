@@ -1,4 +1,4 @@
-export default class MenuRender {
+ default class MenuRender {
   constructor(loginFormOpen, logout, showError) {
     this.loginHandler = loginFormOpen;
     this.logoutHandler = logout;

@@ -86,10 +86,11 @@ export default class MainApi {
       {
         method: 'GET',
         headers: {
+          authorization: `Bearer ${localStorage.getItem('token')}`,
           'Content-Type': 'application/json',
         },
-        /*         mode: 'cors',
-        credentials: 'include', */
+        mode: 'cors',
+        credentials: 'include',
       })
       .then((res) => {
         if (!res.ok) throw new Error(`Не удалось получить данные статей ${res.status}`);
@@ -105,10 +106,11 @@ export default class MainApi {
       {
         method: 'POST',
         headers: {
+          authorization: `Bearer ${localStorage.getItem('token')}`,
           'Content-Type': 'application/json',
         },
-        /*         mode: 'cors',
-        credentials: 'include', */
+        mode: 'cors',
+        credentials: 'include',
         body: JSON.stringify(articleData),
       })
       .then((res) => {
@@ -126,10 +128,11 @@ export default class MainApi {
       {
         method: 'DELETE',
         headers: {
+          authorization: `Bearer ${localStorage.getItem('token')}`,
           'Content-Type': 'application/json',
         },
-        /*         mode: 'cors',
-        credentials: 'include', */
+        mode: 'cors',
+        credentials: 'include',
       })
       .then((res) => {
         if (!res.ok) throw new Error(`Не удалось удалить статью ${res.status}`);

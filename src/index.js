@@ -31,12 +31,13 @@ import './images/marked-icon.png';
 import './images/mobile_menu_button_white.png';
 import './images/mobile_menu_button_black.png';
 
-import params from './js/components/params';
+import constants from './js/constants/constants';
 import Form from './js/components/form';
 import ShowError from './js/components/error';
 import MainApi from './js/api/main-api';
 import NewsApi from './js/api/news-api';
 import NewsRender from './js/components/news-render';
+
 
 const headerMenu = document.querySelector('.header__menu');
 const authorize = document.querySelector('#authorize');
@@ -71,7 +72,11 @@ const regComplete = new Form(
   showError,
 );
 
-const newsApi = new NewsApi('4fd67e008f0240d980dfe1d6ff26a56e', 7, 'ru');
+const newsApi = new NewsApi(
+  constants.newsApiConfig.apiKey,
+  constants.newsApiConfig.days,
+  constants.newsApiConfig.lang,
+);
 
 /* Проверка наличия актуальной куки для авторизации и получение данных пользователя  */
 let userData = { };
@@ -94,7 +99,6 @@ mainApi.getUserData()
         });
       });
     } else {
-      console.log('Надо авторизоваться');
       userName.textContent = '->';
       headerMenu.classList.remove('header__menu_logged-in');
       authorize.addEventListener('click', () => { loginForm.open(); });
@@ -105,7 +109,6 @@ mainApi.getUserData()
     }
   })
   .catch((err) => {
-    console.log('ошибка начальной авторизации');
     /*    this.showError.show(err.message); */
     headerMenu.classList.remove('header__menu_logged-in');
     authorize.addEventListener('click', () => { loginForm.open(); });
@@ -121,5 +124,5 @@ const newsRender = new NewsRender(
   mainApi.createArticle.bind(mainApi),
   mainApi.removeArticle.bind(mainApi),
   showError,
-  params,
+  constants,
 );

@@ -32,7 +32,7 @@ export default class NewsRender {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  _isUserLogged() {
+  _isLogged() {
     return Boolean(localStorage.getItem('user'));
   }
 
@@ -41,27 +41,29 @@ export default class NewsRender {
     searchResult.querySelector(this.card.node).href = data.link;
     searchResult.querySelector(this.card.img).src = data.image;
     searchResult.querySelector(this.card.date).textContent = `${data.date.getDate()} ${this.cardsArray.month[data.date.getMonth()]} ${data.date.getFullYear()}`;
-
     searchResult.querySelector(this.card.title).textContent = data.title;
     searchResult.querySelector(this.card.text).textContent = data.text;
     searchResult.querySelector(this.card.src).textContent = data.source;
-    if (this._isUserLogged()) {
+    searchResult.querySelector(this.card.icon.node).setAttribute('savedID', data._id);
+    if (this._isLogged()) {
       searchResult.querySelector(this.card.icon.node).classList.add(this.card.icon.saved);
       searchResult.querySelector(this.card.icon.node).setAttribute('cardID', this._position);
     }
+
     return searchResult;
   }
 
   cardHandler(event) {
     const iconClass = this.card.icon.node.slice(1, this.card.icon.node.length);
+    console.log('iconClass', iconClass);
     if (event.target.className.includes(iconClass)) {
       event.preventDefault();
-      if (this._isUserLogged()) {
+      if (this._isLogged()) {
         if (event.target.className.includes(this.card.icon.marked)) {
-          this.deleteArticle(event.target.getAttribute('UID'))
+          this.deleteArticle(event.target.getAttribute('savedID'))
             .then(() => {
               event.target.classList.remove(this.card.icon.marked);
-              event.target.removeAttribute('UID');
+              event.target.removeAttribute('savedID');
             })
             .catch((err) => {
               this.showError.show(err.message);
@@ -71,7 +73,7 @@ export default class NewsRender {
           this.saveArticle(this._news[event.target.getAttribute('cardID')])
             .then((res) => {
               event.target.classList.add(this.card.icon.marked);
-              event.target.setAttribute('UID', res);
+              event.target.setAttribute('savedID', res);
             })
             .catch((err) => {
               this.showError.show(err.message);
@@ -88,7 +90,6 @@ export default class NewsRender {
       this.showError.show('Пустой запрос!');
       return;
     }
-    /*    this._serverError.classList.add(this.cardsArray.serverError.hide); */
     this._resultsSection.classList.add(this.cardsArray.resultsSection.hide);
     this._notFound.classList.add(this.cardsArray.notFound.hide);
     this._preloader.classList.remove(this.cardsArray.preloader.hide);
@@ -105,7 +106,6 @@ export default class NewsRender {
           this._notFound.classList.remove(this.cardsArray.notFound.hide);
           this._unlockSearch();
         } else {
-          console.log(this._news);
           this._unlockSearch();
           this._renderCards();
           this._resultsSection.classList.remove(this.cardsArray.resultsSection.hide);
@@ -143,7 +143,7 @@ export default class NewsRender {
   savedIconHandler() {
     Array.from(this._resultsContainer.querySelectorAll(this.card.node)).forEach(
       (item) => {
-        if (this._isUserLogged()) {
+        if (this._isLogged()) {
           item.querySelector(this.card.icon.node).classList.add(this.card.icon.saved);
         } else {
           item.querySelector(this.card.icon.node).classList.remove(this.card.icon.saved);

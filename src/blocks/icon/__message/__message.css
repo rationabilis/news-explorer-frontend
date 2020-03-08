@@ -14,10 +14,7 @@
   color: #000000;
   margin: 0;
   padding: 13px 13px;
-}
-
-@media (max-width: 1220px) {
-  .icon__message {
-    display: none;
-    }
+  display: block;
+  opacity: 0;
+  z-index: 10;
 }

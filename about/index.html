@@ -9,7 +9,7 @@
   <meta name="author" content="Alexander Demin">
   <title>NewsExplorer</title>
   <link rel="icon" href="../../images/favicon.png">
-  <link rel="stylesheet" href="../css/style.cd8debc120b2e865437b.css?d57e0b84aa6d2fe3ce0b">
+  <link rel="stylesheet" href="../css/style.c860536c0e9d0d47b954.css?8ac7d68786a7ac3308b8">
 
 </head>
 <body>
@@ -21,9 +21,9 @@
             <nav class="header__menu header__menu_logged-in">
               <a class="link link_white" href="../index.html">Главная</a>
               <a class="link link_white" href="./index.html">О проекте</a>
-              <a class="link link_white" href="../savednews/index.html">Авторизоваться</a>
+              <a class="link link_white" id="authorize">Авторизоваться</a>
               <a class="link link_white" href="../savednews/index.html">Сохранённые статьи</a>
-              <a class="link link_white" href="../index.html">Грета&#160;&#160;[→</a>
+              <a class="link link_white" id="userName"></a>
             </nav>
             <div class="header__mobile-button header__mobile-button_black"></div>
           </header>
@@ -92,34 +92,15 @@
 
       <div class="swiper-wrapper swiper-wrapper_ad">
 
-        <div class="swiper-slide swiper-slide_ad">
-          <p class="swiper-slide__date">14 августа, 2019</p>
-          <img class="swiper-slide__image" src="../images/dolinin.png" alt="Фото Антона Долинина">
-          <h3 class="swiper-slide__name">Антон Долинин</h3>
-          <p class="swiper-slide__email">anton@yandex.ru</p>
-          <p class="swiper-slide__text">Emmet (formerly Zen Coding) is a web- developer’s
-            toolkit that can greatly improve your HTML & CSS workflow.</p>
-        </div>
-
-        <div class="swiper-slide swiper-slide_ad">
-          <p class="swiper-slide__date">14 августа, 2019</p>
-          <img class="swiper-slide__image" src="../images/fyodorova.png" alt="Фото Марии Фёдоровой">
-          <h3 class="swiper-slide__name">Мария Фёдорова</h3>
-          <p class="swiper-slide__email">mariiifed@yandex.ru</p>
-          <p class="swiper-slide__text">You can install this plugin directly from
-            NetBeans Plugin Portal: in NetBeans, open Tools > Plugins > Available
-            plugins and find and install Emmet plugin.</p>
-        </div>
-
-        <div class="swiper-slide swiper-slide_ad">
-          <p class="swiper-slide__date">14 августа, 2019</p>
-          <img class="swiper-slide__image" src="../images/ivanova.png" alt="Фото Инги Ивановой">
-          <h3 class="swiper-slide__name">Инга Иванова</h3>
-          <p class="swiper-slide__email">ingaiva@yandex.ru</p>
-          <p class="swiper-slide__text">With Emmet, you can type CSS-like expressions
-            that can be dynamically parsed, and produce output depending
-            on what you type in the abb...</p>
-        </div>
+        <template id="commit-template">
+          <div class="swiper-slide swiper-slide_ad">
+            <p class="swiper-slide__date"></p>
+            <img class="swiper-slide__image">
+            <h3 class="swiper-slide__name"></h3>
+            <p class="swiper-slide__email"></p>
+            <p class="swiper-slide__text"></p>
+          </div>
+        </template>
 
       </div>
       <!-- Add Pagination -->
@@ -142,9 +123,80 @@
       </div>
     </footer>
 
+    <div class="popup invisible" id="signin-popup">
+      <div class="popup__content">
+
+        <form class="popup__form" name="signin-form">
+          <img src="../images/close-button.png" alt="" class="popup__close">
+          <h3 class="popup__title">Вход</h3>
+
+          <p class="popup__field">Email</p>
+          <input type="email" name="email" id="signin-email" class="popup__input" placeholder="Введите почту" required>
+          <span class="error-message invisible" id="error-signin-email">Неправильный формат email</span>
+
+          <p class="popup__field">Пароль</p>
+          <input type="password" name="password" id="signin-password" minlength="8" class="popup__input" placeholder="Введите пароль" required>
+          <span class="error-message invisible" id="error-signin-password">Не менее 8 символов</span>
+          <p class="error-message signup-form-error"></p>
+          <button class="button popup__button" type="submit">Войти</button>
+          <span class="popup__under-button">или Зарегистрироваться</span>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup invisible" id="signup-popup">
+      <div class="popup__content">
+
+        <form class="popup__form" name="signup-form">
+            <img src="../images/close-button.png" alt="" class="popup__close">
+            <h3 class="popup__title">Регистрация</h3>
+
+            <p class="popup__field">Email</p>
+            <input type="email" name="email" id="signup-email" class="popup__input" placeholder="Введите почту" required>
+            <span class="error-message invisible" id="error-signup-email">Неправильный формат email</span>
+
+            <p class="popup__field">Пароль</p>
+            <input type="password" name="password" id="signup-password" minlength="8" maxlength="30" class="popup__input" placeholder="Введите пароль" required>
+            <span class="error-message invisible" id="error-signup-password">Не менее 8 символов</span>
+
+            <p class="popup__field">Имя</p>
+            <input type="text" name="name" id="signup-name" minlength="2" maxlength="30" class="popup__input" placeholder="Введите своё имя" required>
+            <span class="error-message invisible" id="error-signup-name">От 2 до 30 символов</span>
+
+            <p class="error-message signup-form-error">Такой пользователь уже есть</p>
+
+            <button class="button popup__button" type="submit">Зарегистрироваться</button>
+            <span class="popup__under-button">или Войти</span>
+
+        </form>
+      </div>
+    </div>
+
+    <div class="popup invisible" id="successed-reg">
+      <div class="popup__content">
+        <form class="popup__form" name="successed-form">
+            <img src="../images/close-button.png" alt="" class="popup__close">
+            <h3 class="popup__title">Пользователь успешно зарегистрирован</h3>
+
+            <span class="popup__under-button">Выполнить вход</span>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup invisible" id="mobile">
+      <nav class="mobile-menu">
+        <img src="../images/close-button.png" alt="" class="mobile-menu__close">
+        <a class="mobile-menu__link" href="./index.html">Главная</a>
+        <a class="mobile-menu__link" href="./about/index.html">О проекте</a>
+        <a class="mobile-menu__link" href="./savednews/index.html">Сохранённые статьи</a>
+        <a class="mobile-menu__link" href="./index.html">Грета&#160;&#160;[→</a>
+      </nav>
+    </div>
+
+
   </div>
 
   <!-- Скрипты -->
-    <script src="../about/about.d57e0b84aa6d2fe3ce0b.js?d57e0b84aa6d2fe3ce0b"></script>
+    <script src="../about/about.8ac7d68786a7ac3308b8.js?8ac7d68786a7ac3308b8"></script>
 </body>
 </html>

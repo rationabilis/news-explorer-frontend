@@ -49,6 +49,7 @@ const swiper = new Swiper('.swiper-container', {
 });
 
 const mainApi = new MainApi(constants.mainApiConfig.mainUrl);
+console.log(mainApi);
 const authorize = document.querySelector('#authorize');
 const userName = document.querySelector('#userName');
 const headerMenu = document.querySelector('.header__menu');

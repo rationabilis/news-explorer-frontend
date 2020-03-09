@@ -1,15 +1,5 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable no-undef */
-/* MainApi Отвечает за взаимодействие с написанным вами Node.js API.
-Конструктор этого класса принимает опции, необходимые для инициализации работы с API.
-Вот список обязательных методов:
-signup регистрирует нового пользователя;
-signin аутентифицирует пользователя на основе почты и пароля;
-getUserData возвращает информацию о пользователе;
-getArticles забирает все статьи;
-createArticle создаёт статью;
-removeArticle удаляет статью.
-*/
 
 export default class MainApi {
   constructor(mainUrl) {
@@ -62,6 +52,7 @@ export default class MainApi {
   }
 
   getUserData() {
+    console.log(`${this.mainUrl}/users/me`);
     return fetch(`${this.mainUrl}/users/me`,
       {
         headers: {

@@ -47,8 +47,6 @@ const authorize = document.querySelector('#authorize');
 
 const userName = document.querySelector('#userName');
 const mainApi = new MainApi(constants.mainApiConfig.mainUrl);
-console.log(mainApi);
-
 const showError = new ShowError();
 
 const loginForm = new Form(

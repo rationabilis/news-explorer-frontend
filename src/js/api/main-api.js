@@ -52,7 +52,6 @@ export default class MainApi {
   }
 
   getUserData() {
-    console.log(`${this.mainUrl}/users/me`);
     return fetch(`${this.mainUrl}/users/me`,
       {
         headers: {

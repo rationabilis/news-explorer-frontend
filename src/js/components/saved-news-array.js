@@ -1,21 +1,21 @@
 /* eslint-disable no-undef */
 /* eslint-disable class-methods-use-this */
-export default class CardsArray {
+export default class SavedNewsArray {
   constructor(getArticles, deleteArticle, {
-    cardPrototype, cardsArray, card, month,
+    cardPrototype, savedNewsArray, card, month,
   }, showError) {
     this.showError = showError;
     this.card = card;
     this.getArticles = getArticles;
     this._stats = {};
-    this.cardsArray = cardsArray;
+    this.savedNewsArray = savedNewsArray;
     this.month = month;
     this.deleteArticle = deleteArticle;
     this.cardPrototype = document.querySelector(cardPrototype).content;
-    this._articlesHeader = document.querySelector(this.cardsArray.articlesHeader);
-    this._cardsArrayContainer = document.querySelector(this.cardsArray.cardsArrayContainer);
-    this._savedNumber = document.querySelector(this.cardsArray.savedNumber);
-    this._cardsArrayContainer.addEventListener('click', (event) => this.articlesHandler(event));
+    this._articlesHeader = document.querySelector(this.savedNewsArray.articlesHeader);
+    this._savedNewsContainer = document.querySelector(this.savedNewsArray.savedNewsContainer);
+    this._savedNumber = document.querySelector(this.savedNewsArray.savedNumber);
+    this._savedNewsContainer.addEventListener('click', (event) => this.articlesHandler(event));
     this.render();
   }
 
@@ -26,7 +26,7 @@ export default class CardsArray {
       this.deleteArticle(event.target.getAttribute('savedID'))
         .then(() => {
           delete this._stats[event.target.getAttribute('savedID')];
-          this._cardsArrayContainer.removeChild(event.target.closest(this.card.node));
+          this._savedNewsContainer.removeChild(event.target.closest(this.card.node));
           this.keywordsStats();
         })
         .catch((err) => {
@@ -57,7 +57,7 @@ export default class CardsArray {
           this._stats[item._id] = item.keyword;
           // eslint-disable-next-line no-param-reassign
           item.date = new Date(Date.parse(item.date));
-          this._cardsArrayContainer.appendChild(this.createCard(item));
+          this._savedNewsContainer.appendChild(this.createCard(item));
         });
         this.keywordsStats();
       })
@@ -107,15 +107,15 @@ export default class CardsArray {
     this._savedNumber.textContent = `${this.userName()}, у Вас ${Array.from(Object.keys(this._stats)).length} сохраненных статей`;
     const keywords = this.keywordsNumber();
 
-    document.querySelector(this.cardsArray.words.first).textContent = keywords.keywordsTotal >= 1 ? keywords.popular.shift() : '';
+    document.querySelector(this.savedNewsArray.words.first).textContent = keywords.keywordsTotal >= 1 ? keywords.popular.shift() : '';
     let tagLine = '';
     if (keywords.keywordsTotal === 3) {
       tagLine = `, ${keywords.popular.shift()}, ${keywords.popular.shift()}`;
     } else {
       tagLine = keywords.keywordsTotal <= 1 ? '' : `, ${keywords.popular.shift()}`;
     }
-    document.querySelector(this.cardsArray.words.second).textContent = tagLine;
-    document.querySelector(this.cardsArray.words.rest).style.display = keywords.keywordsTotal > 3 ? 'auto' : 'none';
-    document.querySelector(this.cardsArray.words.more).textContent = keywords.keywordsTotal - 2;
+    document.querySelector(this.savedNewsArray.words.second).textContent = tagLine;
+    document.querySelector(this.savedNewsArray.words.rest).style.display = keywords.keywordsTotal > 3 ? 'auto' : 'none';
+    document.querySelector(this.savedNewsArray.words.more).textContent = keywords.keywordsTotal - 2;
   }
 }

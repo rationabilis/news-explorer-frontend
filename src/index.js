@@ -40,6 +40,8 @@ import ShowError from './js/components/error';
 import MainApi from './js/api/main-api';
 import NewsApi from './js/api/news-api';
 import NewsRender from './js/components/news-render';
+import BaseComponent from './js/components/base-component';
+import MobileMenu from './js/components/mobileMenu';
 
 
 const headerMenu = document.querySelector('.header__menu');
@@ -50,28 +52,43 @@ const mainApi = new MainApi(constants.mainApiConfig.mainUrl);
 const showError = new ShowError();
 
 const loginForm = new Form(
-  document.querySelector('#signin-popup'),
-  '#signup-popup',
+  document.querySelector(constants.popup.loginForm),
+  constants.popup.signupForm,
   mainApi.signin.bind(mainApi),
   mainApi.getUserData.bind(mainApi),
   showError,
 );
 
 const signupForm = new Form(
-  document.querySelector('#signup-popup'),
-  '#signin-popup',
+  document.querySelector(constants.popup.signupForm),
+  constants.popup.loginForm,
   mainApi.signup.bind(mainApi),
   mainApi.getUserData.bind(mainApi),
   showError,
 );
 
 const regComplete = new Form(
-  document.querySelector('#successed-reg'),
-  '#signin-popup',
+  document.querySelector(constants.popup.regComplete),
+  constants.popup.loginForm,
   null,
   null,
   showError,
 );
+
+const mobileMenu = new MobileMenu(
+  document.querySelector(constants.popup.mobileMenu.node),
+);
+
+const mobileMenuOpen = new BaseComponent(
+  document.querySelector(constants.popup.mobileMenu.openButton),
+  { click: () => { mobileMenu.open(); } },
+);
+
+const mobileMenuClose = new BaseComponent(
+  document.querySelector(constants.popup.mobileMenu.closeButton),
+  { click: () => { mobileMenu.close(); } },
+);
+
 
 const newsApi = new NewsApi(
   constants.newsApiConfig.apiKey,

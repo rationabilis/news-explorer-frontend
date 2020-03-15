@@ -7,6 +7,18 @@ const constants = {
     apiKey: '4fd67e008f0240d980dfe1d6ff26a56e',
     lang: 'ru',
   },
+
+  popup: {
+    loginForm: '#signin-popup',
+    signupForm: '#signup-popup',
+    regComplete: '#successed-reg',
+    mobileMenu: {
+      node: '#mobile',
+      openButton: '.header__mobile-button ',
+      closeButton: '.mobile-menu__close',
+    },
+  },
+
   results: {
     showStep: 3,
     showMore: { node: '.search-results__button', hide: 'invisible' },
@@ -46,8 +58,8 @@ const constants = {
     },
 
   },
-  cardsArray: {
-    cardsArrayContainer: '.cards_saved',
+  savedNewsArray: {
+    savedNewsContainer: '.cards_saved',
     savedNumber: '.saved-number',
     articlesHeader: '.saved-articles__subtitle',
     words: {

@@ -17,7 +17,7 @@ import constants from '../js/constants/constants';
 import Form from '../js/components/form';
 import ShowError from '../js/components/error';
 import MainApi from '../js/api/main-api';
-import CardsArray from '../js/components/cardsArray';
+import SavedNewsArray from '../js/components/saved-news-array';
 
 const authorize = document.querySelector('#authorize');
 
@@ -88,7 +88,7 @@ mainApi.getUserData()
     });
   });
 
-new CardsArray(
+new SavedNewsArray(
   mainApi.getArticles.bind(mainApi),
   mainApi.removeArticle.bind(mainApi),
   constants,

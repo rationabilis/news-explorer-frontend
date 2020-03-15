@@ -16,8 +16,8 @@ export default class NewsRender {
     this._submit = document.querySelector(results.newsForm);
     this._searchInput = document.querySelector(results.searchInput);
     this._searchSubmit = document.querySelector(results.searchSubmit);
-    this.cardsArray = results;
-    this.cardsArray.month = month;
+    this.savedNewsArray = results;
+    this.savedNewsArray.month = month;
     this.getNews = getNews;
     this.saveArticle = saveArticle;
     this.deleteArticle = deleteArticle;
@@ -41,7 +41,7 @@ export default class NewsRender {
     const searchResult = this.cardPrototype.cloneNode(true);
     searchResult.querySelector(this.card.node).href = data.link;
     searchResult.querySelector(this.card.img).src = data.image;
-    searchResult.querySelector(this.card.date).textContent = `${data.date.getDate()} ${this.cardsArray.month[data.date.getMonth()]} ${data.date.getFullYear()}`;
+    searchResult.querySelector(this.card.date).textContent = `${data.date.getDate()} ${this.SavedNews.month[data.date.getMonth()]} ${data.date.getFullYear()}`;
     searchResult.querySelector(this.card.title).textContent = data.title;
     searchResult.querySelector(this.card.text).textContent = data.text;
     searchResult.querySelector(this.card.src).textContent = data.source;
@@ -90,10 +90,10 @@ export default class NewsRender {
       this.showError.show('Пустой запрос!');
       return;
     }
-    this._resultsSection.classList.add(this.cardsArray.resultsSection.hide);
-    this._notFound.classList.add(this.cardsArray.notFound.hide);
-    this._preloader.classList.remove(this.cardsArray.preloader.hide);
-    this._showMore.classList.remove(this.cardsArray.showMore.hide);
+    this._resultsSection.classList.add(this.SavedNews.resultsSection.hide);
+    this._notFound.classList.add(this.SavedNews.notFound.hide);
+    this._preloader.classList.remove(this.SavedNews.preloader.hide);
+    this._showMore.classList.remove(this.SavedNews.showMore.hide);
     if (this._news.length !== 0) {
       this._clearResults();
     }
@@ -101,20 +101,20 @@ export default class NewsRender {
     this.getNews(key)
       .then((data) => {
         this._news = data;
-        this._preloader.classList.add(this.cardsArray.preloader.hide);
+        this._preloader.classList.add(this.SavedNews.preloader.hide);
         if (data.length === 0) {
-          this._notFound.classList.remove(this.cardsArray.notFound.hide);
+          this._notFound.classList.remove(this.SavedNews.notFound.hide);
           this._unlockSearch();
         } else {
           this._unlockSearch();
           this._renderCards();
-          this._resultsSection.classList.remove(this.cardsArray.resultsSection.hide);
+          this._resultsSection.classList.remove(this.SavedNews.resultsSection.hide);
         }
       })
       .catch((err) => {
-        this._notFound.classList.add(this.cardsArray.notFound.hide);
-        this._preloader.classList.add(this.cardsArray.notFound.hide);
-        this._serverError.classList.remove(this.cardsArray.serverError.hide);
+        this._notFound.classList.add(this.SavedNews.notFound.hide);
+        this._preloader.classList.add(this.SavedNews.notFound.hide);
+        this._serverError.classList.remove(this.SavedNews.serverError.hide);
         this._unlockSearch();
         this.showError.show(err.message);
       });
@@ -131,8 +131,8 @@ export default class NewsRender {
   _renderCards() {
     const searchResult = document.createDocumentFragment();
     const numberOfLeftCards = this._news.length - this._position;
-    const numberOfNewsToAdd = numberOfLeftCards < this.cardsArray.showStep ? numberOfLeftCards : this.cardsArray.showStep;
-    if (this._news.length - this._position <= this.cardsArray.showStep) { this._showMore.classList.add(this.cardsArray.showMore.hide); }
+    const numberOfNewsToAdd = numberOfLeftCards < this.SavedNews.showStep ? numberOfLeftCards : this.SavedNews.showStep;
+    if (this._news.length - this._position <= this.SavedNews.showStep) { this._showMore.classList.add(this.SavedNews.showMore.hide); }
     for (let i = 0; i < numberOfNewsToAdd; i += 1) {
       searchResult.appendChild(this.createCard(this._news[this._position]));
       this._position += 1;

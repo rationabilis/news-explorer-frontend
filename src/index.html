@@ -20,9 +20,9 @@
         <nav class="header__menu"> <!--  После логина добавить класс header__menu_logged-in -->
           <a class="link link_header" href="./index.html">Главная</a><!-- Если удалить все index.html, то в режиме dev ссылки работают, а в режиме build - нет. -->
           <a class="link link_header" href="./about/index.html">О проекте</a>
-          <a class="link link_header" id="authorize">Авторизоваться</a>
+          <a class="link link_header authorize">Авторизоваться</a>
           <a class="link link_header" href="./savednews/index.html">Сохранённые статьи</a>
-          <a class="link link_header" id="userName"></a>
+          <a class="link link_header username"></a>
         </nav>
         <div class="header__mobile-button  header__mobile-button_white"></div>
       </header>
@@ -164,9 +164,8 @@
         <img src="./images/close-button.png" alt="" class="mobile-menu__close">
         <a class="mobile-menu__link" href="./index.html">Главная</a>
         <a class="mobile-menu__link" href="./about/index.html">О проекте</a>
-        <a class="mobile-menu__link" id="authorize">Авторизоваться</a>
-        <a class="mobile-menu__link" href="./savednews/index.html">Сохранённые статьи</a>
-        <a class="mobile-menu__link" href="./index.html" id="userName"></a>
+        <a class="mobile-menu__link mobile-savednews" href="./savednews/index.html">Сохранённые статьи</a>
+        <a class="mobile-menu__link mobile-username" href="./index.html"></a>
       </nav>
     </div>
 

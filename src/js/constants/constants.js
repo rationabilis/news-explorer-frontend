@@ -8,6 +8,13 @@ const constants = {
     lang: 'ru',
   },
 
+  header: {
+    menu: '.header__menu',
+    authorize: '.authorize',
+    userName: '.username',
+    loggedIn: 'header__menu_logged-in',
+  },
+
   popup: {
     loginForm: '#signin-popup',
     signupForm: '#signup-popup',
@@ -16,6 +23,9 @@ const constants = {
       node: '#mobile',
       openButton: '.header__mobile-button ',
       closeButton: '.mobile-menu__close',
+      authorize: '.mobile-authorize',
+      userName: '.mobile-username',
+      savedNews: '.mobile-savednews',
     },
   },
 
@@ -55,6 +65,7 @@ const constants = {
       saved: 'icon_saved',
       marked: 'icon_marked',
       bin: 'delete_icon',
+      message: '.icon__message',
     },
 
   },

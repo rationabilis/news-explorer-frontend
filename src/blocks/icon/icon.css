@@ -22,6 +22,11 @@
 .icon:hover ~ .icon__message {
   opacity: 1;
 }
+
+.icon.icon_saved:hover ~ .icon__message {
+  opacity: 0;
+}
+
 @media (max-width: 1220px) {
   .icon {
     position: absolute;

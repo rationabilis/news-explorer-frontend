@@ -1,3 +1,4 @@
+/* eslint-disable no-new */
 /* eslint-disable no-restricted-globals */
 /* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
@@ -35,110 +36,17 @@ import './images/mobile_menu_button_white.png';
 import './images/mobile_menu_button_black.png';
 
 import constants from './js/constants/constants';
-import Form from './js/components/form';
-import ShowError from './js/components/error';
-import MainApi from './js/api/main-api';
-import NewsApi from './js/api/news-api';
+import common from './js/components/common';
 import NewsRender from './js/components/news-render';
-import BaseComponent from './js/components/base-component';
-import MobileMenu from './js/components/mobileMenu';
 
+const commonMain = common();
 
-const headerMenu = document.querySelector('.header__menu');
-const authorize = document.querySelector('#authorize');
-
-const userName = document.querySelector('#userName');
-const mainApi = new MainApi(constants.mainApiConfig.mainUrl);
-const showError = new ShowError();
-
-const loginForm = new Form(
-  document.querySelector(constants.popup.loginForm),
-  constants.popup.signupForm,
-  mainApi.signin.bind(mainApi),
-  mainApi.getUserData.bind(mainApi),
-  showError,
-);
-
-const signupForm = new Form(
-  document.querySelector(constants.popup.signupForm),
-  constants.popup.loginForm,
-  mainApi.signup.bind(mainApi),
-  mainApi.getUserData.bind(mainApi),
-  showError,
-);
-
-const regComplete = new Form(
-  document.querySelector(constants.popup.regComplete),
-  constants.popup.loginForm,
-  null,
-  null,
-  showError,
-);
-
-const mobileMenu = new MobileMenu(
-  document.querySelector(constants.popup.mobileMenu.node),
-);
-
-const mobileMenuOpen = new BaseComponent(
-  document.querySelector(constants.popup.mobileMenu.openButton),
-  { click: () => { mobileMenu.open(); } },
-);
-
-const mobileMenuClose = new BaseComponent(
-  document.querySelector(constants.popup.mobileMenu.closeButton),
-  { click: () => { mobileMenu.close(); } },
-);
-
-
-const newsApi = new NewsApi(
-  constants.newsApiConfig.apiKey,
-  constants.newsApiConfig.days,
-  constants.newsApiConfig.lang,
-);
-
-/* Проверка наличия актуальной куки для авторизации и получение данных пользователя  */
-let userData = { };
-
-mainApi.getUserData()
-  .then((data) => {
-    userData = data;
-    if (userData.user) {
-      userName.textContent = `${userData.user} ->`;
-      localStorage.setItem('user', userData.user);
-      headerMenu.classList.add('header__menu_logged-in');
-      authorize.removeEventListener('click', () => { loginForm.open(); });
-      userName.addEventListener('click', () => {
-        mainApi.logout();
-        headerMenu.classList.remove('header__menu_logged-in');
-        authorize.addEventListener('click', () => {
-          loginForm.open();
-        });
-      });
-    } else {
-      userName.textContent = '->';
-      headerMenu.classList.remove('header__menu_logged-in');
-      authorize.addEventListener('click', () => { loginForm.open(); });
-      userName.removeEventListener('click', () => {
-        mainApi.logout()
-          .then(location.reload());
-      });
-    }
-  })
-  .catch((err) => {
-    /*    this.showError.show(err.message); */
-    headerMenu.classList.remove('header__menu_logged-in');
-    authorize.addEventListener('click', () => { loginForm.open(); });
-    userName.removeEventListener('click', () => {
-      mainApi.logout();
-      location.reload();
-    });
-  });
-
+commonMain.init();
 
 const newsRender = new NewsRender(
-  newsApi.getNews.bind(newsApi),
-  mainApi.createArticle.bind(mainApi),
-  mainApi.removeArticle.bind(mainApi),
-  showError,
+  commonMain.newsApi.getNews.bind(commonMain.newsApi),
+  commonMain.mainApi.createArticle.bind(commonMain.mainApi),
+  commonMain.mainApi.removeArticle.bind(commonMain.mainApi),
+  commonMain.showError,
   constants,
 );

@@ -90,7 +90,7 @@ export default class Form {
           this.enableInputs();
           this.getUser()
             .then((res) => {
-              localStorage && localStorage.setItem('user', res);
+              localStorage && localStorage.setItem('user', res.user);
               this.headerMenu.classList.add('header__menu_logged-in');
               this.userName.textContent = `${userData.user} ->`;
             })

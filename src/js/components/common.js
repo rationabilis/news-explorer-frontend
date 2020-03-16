@@ -75,28 +75,26 @@ const common = () => {
     headerMenu.classList.remove(constants.header.loggedIn);
     userData = 'Авторизоваться';
     authorize.addEventListener('click', () => { loginForm.open(); });
-    mainApi.logout();
+    mainApi.logout()
+      .then(() => { document.location.href = '../index.html'; });
   }
 
   function init() {
     userData = localStorage.getItem('user');
-    if (userData == null) {
+    if (userData == null || userData === 'Авторизоваться') {
       userData = 'Авторизоваться';
       mobileSavedNews.classList.add('invisible');
-
       userName.textContent = `${userData} ->`;
       mobileUserName.textContent = userData;
       headerMenu.classList.remove(constants.header.loggedIn);
       new BaseComponent(authorize, {
         click: () => {
-          loginForm.open()
-            .then(() => { init(); });
+          loginForm.open();
         },
       });
       new BaseComponent(mobileUserName, {
         click: () => {
-          mainLogin()
-            .then(() => { init(); });
+          mainLogin();
         },
       });
       userName.removeEventListener('click', () => {
@@ -112,17 +110,15 @@ const common = () => {
       mobileUserName.textContent = userData;
       headerMenu.classList.add(constants.header.loggedIn);
       authorize.removeEventListener('click', () => {
-        loginForm.open()
-          .then(() => { init(); });
+        loginForm.open();
       });
       mobileUserName.removeEventListener('click', () => {
-        mainLogin()
-          .then(() => { init(); });
+        mainLogin();
       });
 
       new BaseComponent(mobileUserName, { click: () => { mainLogout(); } });
 
-      new BaseComponent(userName, { click: () => { mainLogout(); } });
+      new BaseComponent(userName, { click: () => { mainLogout(); console.log('добавлен слушатель на выход'); } });
     }
   }
 

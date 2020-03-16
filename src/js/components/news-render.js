@@ -16,7 +16,7 @@ export default class NewsRender {
     this._submit = document.querySelector(results.newsForm);
     this._searchInput = document.querySelector(results.searchInput);
     this._searchSubmit = document.querySelector(results.searchSubmit);
-    this._serverError = document.querySelector(results.serverError.node)
+    this._serverError = document.querySelector(results.serverError.node);
     this.savedNewsArray = results;
     this.savedNewsArray.month = month;
     this.getNews = getNews;

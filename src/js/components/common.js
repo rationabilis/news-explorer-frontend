@@ -87,8 +87,18 @@ const common = () => {
       userName.textContent = `${userData} ->`;
       mobileUserName.textContent = userData;
       headerMenu.classList.remove(constants.header.loggedIn);
-      new BaseComponent(authorize, { click: () => { loginForm.open(); } });
-      new BaseComponent(mobileUserName, { click: () => { mainLogin(); } });
+      new BaseComponent(authorize, {
+        click: () => {
+          loginForm.open()
+            .then(() => { init(); });
+        },
+      });
+      new BaseComponent(mobileUserName, {
+        click: () => {
+          mainLogin()
+            .then(() => { init(); });
+        },
+      });
       userName.removeEventListener('click', () => {
         mainApi.logout();
       });
@@ -101,8 +111,14 @@ const common = () => {
       userName.textContent = `${userData} ->`;
       mobileUserName.textContent = userData;
       headerMenu.classList.add(constants.header.loggedIn);
-      authorize.removeEventListener('click', () => { loginForm.open(); });
-      mobileUserName.removeEventListener('click', () => { mainLogin(); });
+      authorize.removeEventListener('click', () => {
+        loginForm.open()
+          .then(() => { init(); });
+      });
+      mobileUserName.removeEventListener('click', () => {
+        mainLogin()
+          .then(() => { init(); });
+      });
 
       new BaseComponent(mobileUserName, { click: () => { mainLogout(); } });
 

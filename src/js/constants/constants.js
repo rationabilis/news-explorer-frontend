@@ -73,6 +73,7 @@ const constants = {
     savedNewsContainer: '.cards_saved',
     savedNumber: '.saved-number',
     articlesHeader: '.saved-articles__subtitle',
+    serverError: { node: '#preloader-server-error', hide: 'invisible' },
     words: {
       first: '.first-keyword',
       second: '.second-keyword',

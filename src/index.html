@@ -48,6 +48,13 @@
         <p class="no-results__text">К сожалению по вашему запросу ничего не найдено.</p>
       </section>
 
+
+
+    <section class="no-results invisible" id="preloader-server-error">
+      <img class="no-results__pic" src="./images/not-found.png" alt=":(">
+      <h4 class="no-results__text">Сервер не отвечает</h4>
+    </div>
+
     <section class="search-results invisible">
         <h2 class="search-results__title">Результаты поиска</h2>
         <div class="cards">
@@ -168,6 +175,13 @@
         <a class="mobile-menu__link mobile-username" href="./index.html"></a>
       </nav>
     </div>
+
+
+    <div class="popup error invisible" id="server-fail">
+      <div class="error__hide"></div>
+      <p class="error__message" id="server-fail-message"></p>
+    </div>
+
 
   </div>
   <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>

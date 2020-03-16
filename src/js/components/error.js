@@ -8,11 +8,11 @@ export default class ShowError {
 
   show(message) {
     this.errorMessage.textContent = message;
-    this.domElement.classList.add('error__show');
+    this.domElement.classList.remove('invisible');
   }
 
   hide() {
     this.errorMessage.textContent = '';
-    this.domElement.classList.remove('error__show');
+    this.domElement.classList.add('invisible');
   }
 }

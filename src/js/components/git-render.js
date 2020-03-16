@@ -12,7 +12,7 @@ export default class GitRender {
       container.appendChild(this._createCommit(item));
     });
     document.querySelector(this.swiper.swiperWrap).appendChild(container);
-    this.swiperUpdate();
+    /* this.swiperUpdate(); */
   }
 
   _createCommit(data) {

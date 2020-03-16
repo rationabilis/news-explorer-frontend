@@ -118,7 +118,7 @@ const common = () => {
 
       new BaseComponent(mobileUserName, { click: () => { mainLogout(); } });
 
-      new BaseComponent(userName, { click: () => { mainLogout(); console.log('добавлен слушатель на выход'); } });
+      new BaseComponent(userName, { click: () => { mainLogout(); } });
     }
   }
 

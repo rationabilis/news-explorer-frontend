@@ -48,10 +48,6 @@ const swiper = new Swiper('.swiper-container', {
   },
 });
 
-const mainApi = new MainApi(constants.mainApiConfig.mainUrl);
-const authorize = document.querySelector('#authorize');
-const userName = document.querySelector('#userName');
-const headerMenu = document.querySelector('.header__menu');
 const showError = new ShowError();
 const gitApi = new GitApi('https://api.github.com/repos/rationabilis/news-explorer-frontend/commits');
 

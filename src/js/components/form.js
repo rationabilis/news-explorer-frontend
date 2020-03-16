@@ -5,7 +5,7 @@ export default class Form {
   constructor(domElement, goTo, handler, getUser, showError) {
     this.domElement = domElement;
     this.headerMenu = document.querySelector('.header__menu');
-    this.userName = document.querySelector('#userName');
+    this.userName = document.querySelector('.username');
     this.closeButton = domElement.querySelector('.popup__close');
     this.closeButton.addEventListener('click', () => { this.close(); });
     this.form = domElement.querySelector('.popup__form');
@@ -92,7 +92,7 @@ export default class Form {
             .then((res) => {
               localStorage && localStorage.setItem('user', res.user);
               this.headerMenu.classList.add('header__menu_logged-in');
-              this.userName.textContent = `${userData.user} ->`;
+              this.userName.textContent = `${res.user} ->`;
             })
             .catch((err) => this.showError.show(err.message));
         }

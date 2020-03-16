@@ -1,7 +1,7 @@
 {
   "name": "news-explorer-frontend",
-  "version": "1.0.0",
-  "description": "Яндекс практикум. Когорта 1. Демин Александр. Дипломный проект. Фронтенд. Версия v1.0.0.",
+  "version": "1.4.0",
+  "description": "Яндекс практикум. Когорта 1. Демин Александр. Дипломный проект. Фронтенд. Версия v1.4.0.",
   "main": "index.js",
   "scripts": {
     "build": "rimraf dist && webpack --mode production",

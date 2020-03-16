@@ -1,3 +1,7 @@
+/* eslint-disable no-new */
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-undef */
+/* eslint-disable no-unused-vars */
 import './style.css';
 import './images/favicon.png';
 import './images/github_logo.png';
@@ -30,3 +34,19 @@ import './images/hover-icon.png';
 import './images/marked-icon.png';
 import './images/mobile_menu_button_white.png';
 import './images/mobile_menu_button_black.png';
+
+import constants from './js/constants/constants';
+import common from './js/components/common';
+import NewsRender from './js/components/news-render';
+
+const commonMain = common();
+
+commonMain.init();
+
+const newsRender = new NewsRender(
+  commonMain.newsApi.getNews.bind(commonMain.newsApi),
+  commonMain.mainApi.createArticle.bind(commonMain.mainApi),
+  commonMain.mainApi.removeArticle.bind(commonMain.mainApi),
+  commonMain.showError,
+  constants,
+);

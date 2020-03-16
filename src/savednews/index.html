@@ -20,88 +20,36 @@
         <nav class="header__menu header__menu_logged-in">
             <a class="link link_white" href="../index.html">Главная</a>
             <a class="link link_white" href="../about/index.html">О проекте</a>
-            <a class="link link_white" href="./index.html">Авторизоваться</a>
+            <a class="link link_white authorize">Авторизоваться</a>
             <a class="link link_white" href="./index.html">Сохранённые статьи</a>
-            <a class="link link_white" href="../index.html">Грета&#160;&#160;[-></a>
+            <a class="link link_white username"></a>
         </nav>
         <div class="header__mobile-button header__mobile-button_black"></div>
       </header>
       <p class="saved-articles__grey-title">Сохранённые статьи</p>
-      <h2 class="saved-articles__title">Грета, у вас 5 сохранённых статей</h2>
-      <p class="saved-articles__subtitle">По ключевым словам: <b>Природа</b>, <b>Тайга</b> и <b>2 другим</b></p>
+      <h2 class="saved-articles__title"><span class="saved-number"></span></h2>
+      <p class="saved-articles__subtitle">По ключевым словам: <b>
+        <span class="first-keyword"></span><span class="second-keyword"></span>
+      </b><span class="other"> и <b><span class="and-more"></span> другим</b></span></p>
     </section>
 
     <section class="search-results">
 
         <div class="cards cards_saved">
 
-          <div class="card">
-            <img src="../images/parki.png" class="card__image" alt="Парки">
-              <p class="card__category">Природа</p>
-              <button class="delete-icon"></button>
+          <template id="card-template">
+            <a href="" class="card" target="_blank">
+              <img class="card__image">
+              <button class="icon delete-icon"></button>
+              <p class="delete-icon__message">Убрать из сохранённых</p>
+              <p class="card__category"></p>
+              <h4 class="card__date"></h4>
+              <h3 class="card__title"></h3>
+              <p class="card__text"></p>
+              <h5 class="card__source"></h5>
 
-            <h4 class="card__date">2 августа, 2019</h4>
-            <h3 class="card__title">Национальное достояние – парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад
-                здесь начала складываться система национальных парков – охраняемых
-                территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <h5 class="card__source">ДЗЕН</h5>
-
-          </div>
-
-          <div class="card">
-            <img src="../images/ogni.png" class="card__image" alt="Огни">
-            <p class="card__category">Природа</p>
-            <p class="delete-icon__message">Убрать из сохранённых</p>
-            <button class="delete-icon"></button>
-
-            <h4 class="card__date">2 августа, 2019</h4>
-            <h3 class="card__title">Лесные огоньки: история одной фотографии</h3>
-            <p class="card__text">Фотограф отвлеклась от освещения суровой политической
-                реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных
-                чудес природы.</p>
-            <h5 class="card__source">АФИША</h5>
-          </div>
-
-          <div class="card">
-            <img src="../images/forest.png" class="card__image" alt="Тайга">
-            <p class="card__category">Тайга</p>
-            <button class="delete-icon"></button>
-
-            <h4 class="card__date">2 августа, 2019</h4>
-            <h3 class="card__title">«Первозданная тайга»: новый фотопроект Игоря Шпиленка</h3>
-            <p class="card__text">Знаменитый фотограф снимает первозданные леса России,
-              чтобы рассказать о необходимости их сохранения. В этот раз он отправился
-              в Двинско-Пинежскую тайгу, где... </p>
-            <h5 class="card__source">МЕДИАЗОНА</h5>
-          </div>
-
-          <div class="card">
-            <img src="../images/parki.png" class="card__image" alt="Парки">
-            <p class="card__category">Парки</p>
-            <button class="delete-icon"></button>
-
-            <h4 class="card__date">2 августа, 2019</h4>
-            <h3 class="card__title">Национальное достояние – парки</h3>
-            <p class="card__text">В 2016 году Америка отмечала важный юбилей: сто лет назад
-                здесь начала складываться система национальных парков – охраняемых
-                территорий, где и сегодня каждый может приобщиться к природе.</p>
-            <h5 class="card__source">ДЗЕН</h5>
-          </div>
-
-          <div class="card">
-            <img src="../images/ogni.png" class="card__image" alt="Огни">
-            <p class="card__category">Фотография</p>
-            <button class="delete-icon"></button>
-
-            <h4 class="card__date">2 августа, 2019</h4>
-            <h3 class="card__title">Лесные огоньки: история одной фотографии</h3>
-            <p class="card__text">Фотограф отвлеклась от освещения суровой политической
-                реальности Мексики, чтобы запечатлеть ускользающую красоту одного из местных
-                чудес природы.</p>
-            <h5 class="card__source">АФИША</h5>
-          </div>
-
+            </a>
+          </template>
 
         </div>
     </section>
@@ -118,6 +66,84 @@
         <a class="logos__ref" href="http://www.facebook.com" target="_blank"><img class="logos__pic" src="../images/facebook_logo.png" alt="Лого Фейсбука"></a>
       </div>
     </footer>
+
+    <div class="popup invisible" id="signin-popup">
+      <div class="popup__content">
+
+        <form class="popup__form" name="signin-form">
+          <img src="../images/close-button.png" alt="" class="popup__close">
+          <h3 class="popup__title">Вход</h3>
+
+          <p class="popup__field">Email</p>
+          <input type="email" name="email" id="signin-email" class="popup__input" placeholder="Введите почту" required>
+          <span class="error-message invisible" id="error-signin-email">Неправильный формат email</span>
+
+          <p class="popup__field">Пароль</p>
+          <input type="password" name="password" id="signin-password" minlength="8" class="popup__input" placeholder="Введите пароль" required>
+          <span class="error-message invisible" id="error-signin-password">Не менее 8 символов</span>
+          <p class="error-message signup-form-error"></p>
+          <button class="button popup__button" type="submit">Войти</button>
+          <span class="popup__under-button">или Зарегистрироваться</span>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup invisible" id="signup-popup">
+      <div class="popup__content">
+
+        <form class="popup__form" name="signup-form">
+            <img src="../images/close-button.png" alt="" class="popup__close">
+            <h3 class="popup__title">Регистрация</h3>
+
+            <p class="popup__field">Email</p>
+            <input type="email" name="email" id="signup-email" class="popup__input" placeholder="Введите почту" required>
+            <span class="error-message invisible" id="error-signup-email">Неправильный формат email</span>
+
+            <p class="popup__field">Пароль</p>
+            <input type="password" name="password" id="signup-password" minlength="8" maxlength="30" class="popup__input" placeholder="Введите пароль" required>
+            <span class="error-message invisible" id="error-signup-password">Не менее 8 символов</span>
+
+            <p class="popup__field">Имя</p>
+            <input type="text" name="name" id="signup-name" minlength="2" maxlength="30" class="popup__input" placeholder="Введите своё имя" required>
+            <span class="error-message invisible" id="error-signup-name">От 2 до 30 символов</span>
+
+            <p class="error-message signup-form-error">Такой пользователь уже есть</p>
+
+            <button class="button popup__button" type="submit">Зарегистрироваться</button>
+            <span class="popup__under-button">или Войти</span>
+
+        </form>
+      </div>
+    </div>
+
+    <div class="popup invisible" id="successed-reg">
+      <div class="popup__content">
+        <form class="popup__form" name="successed-form">
+            <img src="../images/close-button.png" alt="" class="popup__close">
+            <h3 class="popup__title">Пользователь успешно зарегистрирован</h3>
+
+            <span class="popup__under-button">Выполнить вход</span>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup invisible" id="mobile">
+      <nav class="mobile-menu">
+        <img src="../images/close-button.png" alt="" class="mobile-menu__close">
+        <a class="mobile-menu__link" href="./index.html">Главная</a>
+        <a class="mobile-menu__link" href="./about/index.html">О проекте</a>
+        <a class="mobile-menu__link mobile-savednews" href="./savednews/index.html">Сохранённые статьи</a>
+        <a class="mobile-menu__link mobile-username" href="./index.html"></a>
+      </nav>
+    </div>
+
+    <div class="popup error invisible" id="server-fail">
+      <div class="popup__content">
+        <div class="error__hide"></div>
+        <p class="error__message" id="server-fail-message"></p>
+      </div>
+    </div>
+
 
   </div>
   <script src="<%= htmlWebpackPlugin.files.chunks.savednews.entry %>"></script>

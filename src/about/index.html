@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="description" content="Yandex.Praktikum Diploma project">
+  <meta name="keywords" content="HTML5, CSS">
+  <meta name="author" content="Alexander Demin">
+  <title>NewsExplorer</title>
+  <link rel="icon" href="../../images/favicon.png">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.about.css %>">
+
+</head>
+<body>
+  <div class="main">
+
+      <section class="about-project">
+          <header class="header">
+            <p class="header__logo header__logo_black">NewsExplorer</p>
+            <nav class="header__menu header__menu_logged-in">
+              <a class="link link_white" href="../index.html">Главная</a>
+              <a class="link link_white" href="./index.html">О проекте</a>
+              <a class="link link_white authorize">Авторизоваться</a>
+              <a class="link link_white" href="../savednews/index.html">Сохранённые статьи</a>
+              <a class="link link_white username"></a>
+            </nav>
+            <div class="header__mobile-button header__mobile-button_black"></div>
+          </header>
+          <h2 class="about-project__title">Клиентам</h2>
+          <p class="about-project__text">Этот сайт — дипломный проект студента Яндекс.Практикума.
+            Его цель — показать, чему научился студент, какими технологиями владеет.</p>
+          <p class="about-project__text">Вёрстка сайта выполнена по методологии БЭМ. Это делает сайт гибким и масштабируемым.
+            Кроме того, добавлять новые страницы и функциональность проще и быстрее, чем в проектах, выполненных по другим методологиям.
+            Также сайт проще и дешевле поддерживать.</p>
+          <p class="about-project__text">Студент самостоятельно написал серверный код.
+            В нём реализована функциональность регистрации и входа в систему.
+            Сайт позволяет искать новости за прошедшую неделю и сохранять понравившиеся в личном кабинете.
+            На сервере избранные новости хранятся в базе данных Mongo DB. Студент запрограммировал надёжный сервер:
+            отказоустойчивый и безопасный.</p>
+          <p class="about-project__text">При создании проекта была использована сборка технологией Webpack.
+            Это современный подход к разработке сайтов. Код оптимизируется, а значит, сайт работает быстрее.
+            Также сайт работает в старых браузерах. Даже если посетители — пользователи старых операционных систем,
+            у них не будет проблем с отображением. А значит, потенциальная аудитория возрастает.</p>
+          <p class="about-project__text">Проект был проверен экспертами Яндекс.Практикума.
+            Если вашему бизнесу нужен сайт, мы рекомендуем обратиться к этому студенту.</p>
+        </section>
+
+    <section class="used-tech">
+      <h2 class="used-tech__title">Используемые технологии</h2>
+      <div class="used-tech__list">
+        <div class="used-tech__item">
+          <p class="used-tech__name">HTML</p>
+          <img src="../images/html.png" alt="Эмблема HTML5'">
+          </div>
+        <div class="used-tech__item">
+          <p class="used-tech__name">CSS</p>
+          <img src="../images/css.png" alt="Эмблема CSS3">
+          </div>
+        <div class="used-tech__item">
+          <p class="used-tech__name">Java Script</p>
+          <img src="../images/js.png" alt="Эмблема JavaScript">
+          </div>
+        <div class="used-tech__item">
+          <p class="used-tech__name">Webpack</p>
+          <img src="../images/webpack.png" alt="Эмблема Webpack">
+          </div>
+      </div>
+    </section>
+
+    <section class="about-author">
+
+      <picture>
+        <source media="(max-width: 320px)" srcset="../../images/author_avatar_320.png">
+        <source media="(min-width: 321px) and (maxwidth: 1440px)" srcset="../../images/author_avatar_768.png">
+        <img class="about-author__avatar" src="../../images/author_avatar_1440.png" alt="Портрет автора">
+      </picture>
+
+      <div class="about-author__description">
+        <h2 class="about-author__title">Об авторе</h2>
+        <p class="about-author__text">Это блок с описанием автора проекта. Здесь следует указать,
+          как вас зовут, чем вы занимаетесь, какими технологиями разработки владеете.</p>
+        <p class="about-author__text">Также можно рассказать о процессе обучения в Практикуме, чему вы тут научились,
+          и чем можете помочь потенциальным заказчикам.</p>
+      </div>
+    </section>
+
+    <!-- Swiper -->
+    <div class="swiper-container swiper-container_ad">
+      <h2 class="swiper-container__title">История коммитов из GitHub</h2>
+      <a class="swiper-container__gitref" href="http://www.github.com" target="_blank">Открыть в Github</a>
+
+      <div class="swiper-wrapper swiper-wrapper_ad">
+
+        <template id="commit-template">
+          <div class="swiper-slide swiper-slide_ad">
+            <p class="swiper-slide__date"></p>
+            <img class="swiper-slide__image">
+            <h3 class="swiper-slide__name"></h3>
+            <p class="swiper-slide__email"></p>
+            <p class="swiper-slide__text"></p>
+          </div>
+        </template>
+
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination swiper-pagination_ad"></div>
+      <!-- Add Arrows -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <footer class="footer">
+      <p class="copiright">&copy; 2019 Supersite</p>
+      <nav class="footer__menu">
+        <a class="link link_footer" href="../index.html">Главная</a>
+        <a class="link link_footer" href="./index.html">О проекте</a>
+        <a class="link link_footer" href="http://praktikum.yandex.ru " target="_blank">Яндекс.Практикум</a>
+      </nav>
+      <div class="logos">
+        <a class="logos__ref" href="http://www.github.com" target="_blank"><img class="logos__pic" src="../images/github_logo.png" alt="Лого Гитхаба"></a>
+        <a class="logos__ref" href="http://www.facebook.com" target="_blank"><img class="logos__pic" src="../images/facebook_logo.png" alt="Лого Фейсбука"></a>
+      </div>
+    </footer>
+
+    <div class="popup invisible" id="signin-popup">
+      <div class="popup__content">
+
+        <form class="popup__form" name="signin-form">
+          <img src="../images/close-button.png" alt="" class="popup__close">
+          <h3 class="popup__title">Вход</h3>
+
+          <p class="popup__field">Email</p>
+          <input type="email" name="email" id="signin-email" class="popup__input" placeholder="Введите почту" required>
+          <span class="error-message invisible" id="error-signin-email">Неправильный формат email</span>
+
+          <p class="popup__field">Пароль</p>
+          <input type="password" name="password" id="signin-password" minlength="8" class="popup__input" placeholder="Введите пароль" required>
+          <span class="error-message invisible" id="error-signin-password">Не менее 8 символов</span>
+          <p class="error-message signup-form-error"></p>
+          <button class="button popup__button" type="submit">Войти</button>
+          <span class="popup__under-button">или Зарегистрироваться</span>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup invisible" id="signup-popup">
+      <div class="popup__content">
+
+        <form class="popup__form" name="signup-form">
+            <img src="../images/close-button.png" alt="" class="popup__close">
+            <h3 class="popup__title">Регистрация</h3>
+
+            <p class="popup__field">Email</p>
+            <input type="email" name="email" id="signup-email" class="popup__input" placeholder="Введите почту" required>
+            <span class="error-message invisible" id="error-signup-email">Неправильный формат email</span>
+
+            <p class="popup__field">Пароль</p>
+            <input type="password" name="password" id="signup-password" minlength="8" maxlength="30" class="popup__input" placeholder="Введите пароль" required>
+            <span class="error-message invisible" id="error-signup-password">Не менее 8 символов</span>
+
+            <p class="popup__field">Имя</p>
+            <input type="text" name="name" id="signup-name" minlength="2" maxlength="30" class="popup__input" placeholder="Введите своё имя" required>
+            <span class="error-message invisible" id="error-signup-name">От 2 до 30 символов</span>
+
+            <p class="error-message signup-form-error">Такой пользователь уже есть</p>
+
+            <button class="button popup__button" type="submit">Зарегистрироваться</button>
+            <span class="popup__under-button">или Войти</span>
+
+        </form>
+      </div>
+    </div>
+
+    <div class="popup invisible" id="successed-reg">
+      <div class="popup__content">
+        <form class="popup__form" name="successed-form">
+            <img src="../images/close-button.png" alt="" class="popup__close">
+            <h3 class="popup__title">Пользователь успешно зарегистрирован</h3>
+
+            <span class="popup__under-button">Выполнить вход</span>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup invisible" id="mobile">
+      <nav class="mobile-menu">
+        <img src="../images/close-button.png" alt="" class="mobile-menu__close">
+        <a class="mobile-menu__link" href="./index.html">Главная</a>
+        <a class="mobile-menu__link" href="./about/index.html">О проекте</a>
+        <a class="mobile-menu__link mobile-savednews" href="./savednews/index.html">Сохранённые статьи</a>
+        <a class="mobile-menu__link mobile-username" href="./index.html"></a>
+      </nav>
+    </div>
+
+    <div class="popup error invisible" id="server-fail">
+      <div class="popup__content">
+        <div class="error__hide"></div>
+        <p class="error__message" id="server-fail-message"></p>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- Скрипты -->
+    <script src="<%= htmlWebpackPlugin.files.chunks.about.entry %>"></script>
+</body>
+</html>

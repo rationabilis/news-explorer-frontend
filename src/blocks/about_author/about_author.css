@@ -11,7 +11,7 @@
   flex-direction: row;
   background: white;
   margin: 0 auto 0 0;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 @media screen and (max-width: 700px)  {
@@ -19,5 +19,6 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 }

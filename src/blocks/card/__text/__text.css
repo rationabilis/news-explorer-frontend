@@ -3,15 +3,16 @@
   font-size: 0.89rem;
   line-height: 1.22rem;
   color: #1A1B22;
-  margin: 0 1.33rem auto 1.33rem;
+  margin: 0 1.33rem 0 1.33rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  max-height: 19%;
 }
 
 @media (max-width: 1220px) {
   .card__text {
     margin: 0 16px 12px 16px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    height: 88px;
+/*     height: 88px; */
   }
 }
 

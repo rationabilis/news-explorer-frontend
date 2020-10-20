@@ -2,14 +2,15 @@
   max-width: 50%;
 }
 
-@media (max-width: 1220px)  {
+@media (max-width: 1000px)  {
   .about-author__description {
-    max-width: 60%;
+    max-width: 100%;
   }
 }
 
 @media screen and (max-width: 700px)  {
   .about-author__description {
     max-width: 100%;
+    margin: 0 16px;
   }
 }

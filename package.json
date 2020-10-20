@@ -1,12 +1,13 @@
 {
   "name": "news-explorer-frontend",
-  "version": "1.0.0",
-  "description": "Яндекс практикум. Когорта 1. Демин Александр. Дипломный проект. Фронтенд. Версия v1.0.0.",
+  "version": "1.4.0",
+  "description": "Яндекс практикум. Когорта 1. Демин Александр. Дипломный проект. Фронтенд. Версия v1.4.0.",
   "main": "index.js",
   "scripts": {
-    "start": "rimraf dist && webpack --mode production",
+    "build": "rimraf dist && webpack --mode production",
     "dev": "webpack-dev-server --mode development --open --watch",
-    "deploy": "gh-pages -d dist"
+    "deploy": "npm run build && scp -r ./dist/* avdemin9@84.201.154.104:/home/avdemin9/news-explorer-frontend",
+    "gh-pages": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",

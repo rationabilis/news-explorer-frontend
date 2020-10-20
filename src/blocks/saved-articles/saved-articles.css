@@ -1,8 +1,6 @@
 @import url('./__grey-title/__grey-title.css');
 @import url('./__title/__title.css');
 @import url('./__subtitle/__subtitle.css');
-@import url('./__image/__image.css');
-@import url('./__category/__category.css');
 
 .saved-articles {
     width: 100%;
